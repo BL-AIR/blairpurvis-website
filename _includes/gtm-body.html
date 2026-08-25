@@ -1,0 +1,11 @@
+{% comment %}
+  Google Tag Manager — the <noscript> half. Must be the first thing inside
+  <body>. Only renders when gtm_id is set.
+{% endcomment %}
+
+{% if site.gtm_id and site.gtm_id != "" %}
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ site.gtm_id }}"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+{% endif %}

@@ -24,6 +24,40 @@ description: Privacy statement for blairpurvis.com.
      Also: if you ever add analytics, this page must change the same day.
      --------------------------------------------------------------------- -->
 
+{% if site.gtm_id and site.gtm_id != "" %}
+This site is a set of files. It has no accounts, no comments and no advertising.
+The typefaces are served from this site rather than from Google, and there are
+no embedded videos, share buttons or fonts loaded from elsewhere.
+
+It does, however, measure visits.
+
+## Analytics
+
+I use Google Tag Manager and, through it, Google Analytics, to understand how
+many people read these pages and which ones they read. This means Google
+receives information about your visit: your IP address, the pages you look at,
+roughly where in the world you are, and what browser you use.
+
+I use it to answer questions like *did anyone read that post* and *are people
+finding the book*. I don't use it to identify individuals, and I have no way of
+doing so.
+
+{% if site.gtm_consent_default_denied %}If you are reading this from the
+European Economic Area, the United Kingdom or Switzerland, nothing is stored on
+your device unless you consent to it — no analytics cookies are set, and what
+measurement happens is anonymous and aggregated. Elsewhere, including Australia,
+Google Analytics sets a cookie to recognise a repeat visit. No advertising
+cookies are set anywhere, and nothing here is used for advertising.{% else %}
+Google Analytics sets cookies in your browser to recognise a repeat visit.{% endif %}
+
+If you'd rather not be counted, any of these will prevent it: a browser with
+tracking protection on (Safari and Firefox do this by default), an ad blocker,
+Chrome's Do Not Track setting, or Google's own
+[opt-out browser add-on](https://tools.google.com/dlpage/gaoptout). None of them
+affect your ability to read anything here.
+
+Google's handling of the data is governed by their own privacy policy, not mine.
+{% else %}
 This site is a set of files. It has no accounts, no comments, no advertising,
 and no analytics. It sets no cookies and stores nothing in your browser.
 
@@ -31,6 +65,7 @@ It also makes no requests to anyone else. The typefaces are served from this
 site rather than from Google, and there are no embedded videos, share buttons,
 tracking pixels or fonts loaded from elsewhere. Visiting these pages does not
 tell any third party that you were here.
+{% endif %}
 
 ## What the host sees
 

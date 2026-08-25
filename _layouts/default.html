@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Fonts are served from this site, not from Google. No third-party
-       requests means no visitor data leaves blairpurvis.com. -->
+  {% if jekyll.environment == "production" %}{% include gtm-head.html %}{% endif %}
+  <!-- Fonts are served from this site, not from Google — so the only
+       third-party request on the page is the Tag Manager one above. -->
   <link rel="preload" href="{{ '/assets/fonts/eb-garamond-latin-400-normal.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="{{ '/assets/fonts/karla-latin-500-normal.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
@@ -12,6 +13,7 @@
   {% seo %}
 </head>
 <body>
+{% if jekyll.environment == "production" %}{% include gtm-body.html %}{% endif %}
 
 <a class="skip" href="#main">Skip to content</a>
 

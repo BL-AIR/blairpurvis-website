@@ -43,6 +43,26 @@ mailing_list_promise: >-
   anyone but the mail service that delivers them.
 
 # ---------------------------------------------------------------------------
+# ANALYTICS — Google Tag Manager
+#
+# Paste your container ID (GTM-XXXXXXX) to switch it on. Leave it empty and
+# no analytics code is loaded at all and no third-party request is made.
+#
+# IMPORTANT: the privacy page reads this value. Setting it automatically
+# changes what /privacy/ says about tracking and cookies, so the statement
+# can never fall out of step with what the site actually does. That is
+# deliberate — do not remove the logic from privacy.md.
+# ---------------------------------------------------------------------------
+
+gtm_id: "GTM-PZHJTSW6"    # container also holds matm.com.au and prahran.press; GA4 property G-TMR4P2HDNJ is wired inside GTM, not here
+
+# Consent Mode defaults. With this true, GTM starts with analytics and ad
+# storage DENIED and only measures anonymously until consent is given —
+# the safe posture for readers in the EU and UK. Set to false only if you
+# have added a proper consent banner, or have decided the risk is yours.
+gtm_consent_default_denied: true
+
+# ---------------------------------------------------------------------------
 # SOCIAL LINKS
 #
 # Only list accounts you actually use. A link to a dormant account takes a

@@ -1,0 +1,62 @@
+{% comment %}
+  Google Tag Manager — the <head> half.
+
+  Renders nothing unless gtm_id is set in _config.yml, so the site makes no
+  third-party request until it is deliberately switched on.
+
+  CONSENT MODE, REGION-SCOPED.
+
+  Consent defaults must be set BEFORE the container loads — set them after
+  and the first hit has already gone.
+
+  Rather than one blanket setting, these are scoped by region. Readers in
+  the EEA, the UK and Switzerland start with analytics and advertising
+  storage DENIED: no cookies, measurement anonymous and aggregated. Readers
+  everywhere else — including Australia, where consent is not required for
+  this — are measured normally, so the numbers you actually look at are the
+  real ones.
+
+  If a consent banner is ever added, it calls
+  gtag('consent','update',{...}) and these defaults lift.
+{% endcomment %}
+
+{% if site.gtm_id and site.gtm_id != "" %}
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  {% if site.gtm_consent_default_denied %}
+  // EEA + UK + Switzerland: nothing stored until consent is given.
+  gtag('consent', 'default', {
+    'region': ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR',
+               'HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK',
+               'SI','ES','SE','IS','LI','NO','GB','CH'],
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'functionality_storage': 'granted',
+    'security_storage': 'granted',
+    'wait_for_update': 500
+  });
+  // Everywhere else, including Australia.
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'granted',
+    'functionality_storage': 'granted',
+    'security_storage': 'granted'
+  });
+  gtag('set', 'ads_data_redaction', true);
+  gtag('set', 'url_passthrough', true);
+  {% endif %}
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','{{ site.gtm_id }}');</script>
+<!-- End Google Tag Manager -->
+{% endif %}
