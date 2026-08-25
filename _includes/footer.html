@@ -1,0 +1,30 @@
+<footer class="colophon">
+  <div class="colophon-inner">
+
+    <p class="colophon-line">
+      Published by <a href="{{ site.publisher.url }}">{{ site.publisher.name }}</a>,
+      Melbourne.
+    </p>
+
+    {% if site.social and site.social.size > 0 %}
+    <nav class="elsewhere" aria-label="Elsewhere">
+      <ul>
+        {% for s in site.social %}{% if s.url %}
+        <li><a href="{{ s.url }}" rel="me">{{ s.name }}</a></li>
+        {% endif %}{% endfor %}
+      </ul>
+    </nav>
+    {% endif %}
+
+    <p class="colophon-line colophon-quiet">
+      <a href="{{ '/press/' | relative_url }}">Press&nbsp;kit</a>
+      &middot;
+      <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+      &middot;
+      <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
+    </p>
+
+    <p class="colophon-line colophon-quiet">&copy; {{ 'now' | date: "%Y" }} Blair Purvis</p>
+
+  </div>
+</footer>

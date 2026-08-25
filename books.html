@@ -1,0 +1,53 @@
+---
+layout: default
+title: Books
+permalink: /books/
+description: Books by Blair Purvis, including The Art of Surrender.
+---
+
+<article class="sheet">
+  <header class="sheet-head">
+    <h1>Books</h1>
+  </header>
+
+  {% for book in site.data.books %}
+  <section class="prose" style="margin-bottom:3.5rem">
+
+    {% if book.status == 'forthcoming' %}
+    <p class="book-status">Forthcoming &middot; {{ book.published | date: "%-d %B %Y" }}</p>
+    {% elsif book.role %}
+    <p class="book-status">{{ book.role }}{% if book.published %} &middot; {{ book.published | date: "%Y" }}{% endif %}</p>
+    {% elsif book.published %}
+    <p class="book-status">{{ book.published | date: "%Y" }}</p>
+    {% endif %}
+
+    <h2 style="margin-top:.3em">{{ book.title }}</h2>
+
+    <div style="max-width:13rem;margin:1.6rem 0 1.8rem">
+      {% include cover.html book=book %}
+    </div>
+
+    {% if book.places %}
+    <ul class="itinerary" style="margin-top:0;border-top:0;padding-top:0">
+      {% for place in book.places %}<li>{{ place }}</li>{% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if book.logline %}<p class="book-logline" style="margin-top:1.4rem">{{ book.logline }}</p>{% endif %}
+    {% if book.blurb %}<p>{{ book.blurb }}</p>{% endif %}
+
+    {% assign links = book.buy | where_exp: "b", "b.url" %}
+    {% if links.size > 0 %}
+    <h3>Where to buy</h3>
+    <ul class="buy">
+      {% for b in links %}
+      <li><a href="{{ b.url }}">{{ b.name }}</a></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+
+  </section>
+  {% endfor %}
+
+  {% include mailing-list.html %}
+</article>

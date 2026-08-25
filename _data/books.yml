@@ -1,0 +1,63 @@
+# ---------------------------------------------------------------------------
+# Books.
+#
+# Order matters — newest first. Each book needs a title and a blurb; every
+# other field is optional and simply doesn't render if you leave it out.
+#
+# buy:  add one line per retailer. These are the purchase paths that were
+#       missing everywhere on the web — worth filling in before 15 October.
+#       Delete any you don't have yet rather than leaving a dead link.
+#
+# cover: put the image in assets/img/ and give the filename here.
+# ---------------------------------------------------------------------------
+
+- title: The Art of Surrender
+  status: forthcoming
+  published: 2026-10-15
+  cover:            # e.g. art-of-surrender.jpg — add to assets/img/
+  cloth: burgundy   # binding colour used until there's a cover: burgundy, forest, indigo, tan
+  places: [Morocco, Gibraltar, Switzerland, Berlin, Sydney]
+  logline: A novel about power, shame, and the cost of allowing yourself to be truly known.
+  blurb: >-
+    Ayman Saliba and Lucas Pfifer meet as strangers and spend twenty years
+    becoming something neither of them can name. Across Morocco, Gibraltar,
+    Switzerland, Berlin and Sydney, theirs is a relationship conducted in
+    the gaps between countries — in borrowed rooms, in languages half-learned,
+    in the long silences that follow an honest sentence.
+  buy:
+    - name: Pre-order from Prahran Publishing
+      url: https://www.prahran.press/authors/blair-purvis/
+    # - name: Amazon
+    #   url:
+    # - name: Booktopia
+    #   url:
+    # - name: Readings
+    #   url:
+    # - name: Apple Books
+    #   url:
+
+- title: Born from Mauritanian Sands
+  status: published
+  published: 2018-08-30
+  cover:
+  cloth: forest
+  logline: The first book of the Generations sequence.
+  blurb: >-
+    Historical fantasy set in the Middle East between 1835 and 1900, drawing
+    on Zoroastrian belief and figures.
+  buy:
+    # - name: Amazon
+    #   url:
+
+- title: Have Colourful Dreams, Sir
+  status: published
+  role: Editor
+  cover:
+  cloth: indigo
+  logline: A play by Masoud Shakarami, translated by Kioomars Ghanbari Azar.
+  blurb: >-
+    Published by Prahran Publishing in English paperback, script edition, and
+    Spanish translation.
+  buy:
+    - name: Prahran Publishing
+      url: https://www.prahran.press

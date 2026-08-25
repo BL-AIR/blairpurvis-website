@@ -1,0 +1,69 @@
+---
+layout: default
+title: Press kit
+permalink: /press/
+description: Photographs, biographies and cover art for press use.
+---
+
+<article class="sheet">
+  <header class="sheet-head">
+    <h1>Press kit</h1>
+    <p class="standfirst">
+      Everything a reviewer, bookseller or producer usually asks for, in one place.
+      Take what you need — no permission required.
+    </p>
+  </header>
+
+  <div class="prose">
+
+    <h2>Biography — short</h2>
+    <p>
+      Blair Purvis is a novelist living in Melbourne. His work is concerned with
+      desire, geography, and the slow, difficult business of being known. His
+      third book, <em>The Art of Surrender</em>, is published in October 2026 by
+      {{ site.publisher.name }}.
+    </p>
+
+    <h2>Biography — long</h2>
+    <p>
+      Blair Purvis was born in Melbourne to Scottish parents and grew up in the
+      city's outer east. He has lived in the United States, Canada and Europe, and
+      travelled widely through the Middle East and Asia. He returned to Melbourne,
+      where he writes, publishes through Prahran Publishing, and engineers sound
+      for community radio. He is a gay man and a father of two.
+      <em>The Art of Surrender</em>, his third book, is published on
+      15&nbsp;October&nbsp;2026.
+    </p>
+
+    <h2>The book</h2>
+    {% assign lead = site.data.books | first %}
+    <p><strong>{{ lead.title }}</strong> — {{ lead.logline }}</p>
+    <p>{{ lead.blurb }}</p>
+    <p>Published {{ lead.published | date: "%-d %B %Y" }} by {{ site.publisher.name }}, Melbourne.</p>
+
+    <h2>Downloads</h2>
+    <ul class="kit">
+      <li>
+        <h3>Author portrait</h3>
+        <!-- Put a high-resolution JPEG in assets/img/ and link it here.
+             Strip the EXIF first — camera files carry GPS. -->
+        <p>Available on request — <a href="mailto:{{ site.author.email }}?subject=Press%20photograph">write to me</a> and I'll send it through.</p>
+      </li>
+      <li>
+        <h3>Cover art</h3>
+        <p>Print-resolution cover available on request from {{ site.publisher.name }}.</p>
+      </li>
+      <li>
+        <h3>Interviews</h3>
+        <p>I'm glad to talk to radio, podcasts and festivals. <a href="{{ '/contact/' | relative_url }}">Get in touch</a>.</p>
+      </li>
+    </ul>
+
+    <h2>How to refer to me</h2>
+    <p>
+      Blair Purvis, novelist. He/him. Based in Melbourne, Australia.
+      Published by {{ site.publisher.name }}.
+    </p>
+
+  </div>
+</article>

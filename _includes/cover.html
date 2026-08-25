@@ -1,0 +1,30 @@
+{% comment %}
+  Renders a book cover.
+
+  If the book has a `cover:` filename in _data/books.yml, that image is used.
+  If it doesn't — which is the case until the artwork exists — it draws a
+  typographic binding instead: cloth, gilt rules, the title set in Garamond.
+  Nothing is missing from the page while you wait for the real thing.
+
+  Set `cloth:` on a book to choose the binding colour:
+  burgundy (default), forest, indigo, or tan.
+{% endcomment %}
+
+{% assign b = include.book %}
+
+{% if b.cover %}
+  <img class="cover-image"
+       src="{{ '/assets/img/' | append: b.cover | relative_url }}"
+       alt="Cover of {{ b.title }}"
+       loading="lazy">
+{% else %}
+  <div class="plate plate-{{ b.cloth | default: 'burgundy' }}" role="img"
+       aria-label="{{ b.title }} by Blair Purvis">
+    <div class="plate-inner">
+      <span class="plate-rule"></span>
+      <span class="plate-title">{{ b.title }}</span>
+      <span class="plate-rule"></span>
+      <span class="plate-author">Blair Purvis</span>
+    </div>
+  </div>
+{% endif %}

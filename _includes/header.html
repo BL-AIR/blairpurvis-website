@@ -1,0 +1,17 @@
+<header class="masthead">
+  <div class="masthead-inner">
+    <a class="wordmark" href="{{ '/' | relative_url }}">
+      <span class="wordmark-name">Blair Purvis</span>
+      <span class="wordmark-role">{{ site.tagline }}</span>
+    </a>
+
+    <nav class="nav" aria-label="Main">
+      <ul>
+        <li><a href="{{ '/books/' | relative_url }}"{% if page.url contains '/books' %} aria-current="page"{% endif %}>Books</a></li>
+        <li><a href="{{ '/writing/' | relative_url }}"{% if page.url contains '/writing' %} aria-current="page"{% endif %}>Writing</a></li>
+        <li><a href="{{ '/about/' | relative_url }}"{% if page.url contains '/about' %} aria-current="page"{% endif %}>About</a></li>
+        <li><a href="{{ '/contact/' | relative_url }}"{% if page.url contains '/contact' %} aria-current="page"{% endif %}>Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

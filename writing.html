@@ -1,0 +1,31 @@
+---
+layout: default
+title: Writing
+permalink: /writing/
+description: Essays and notes on writing by Blair Purvis.
+---
+
+<article class="sheet">
+  <header class="sheet-head">
+    <h1>Writing</h1>
+    <p class="standfirst">Notes on the work, and on the making of it.</p>
+  </header>
+
+  {% if site.posts.size > 0 %}
+  <ul class="entries">
+    {% for post in site.posts %}
+    <li>
+      <p class="entry-meta"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d %B %Y" }}</time></p>
+      <h2 class="entry-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+      <p class="entry-excerpt">
+        {% if post.standfirst %}{{ post.standfirst }}{% else %}{{ post.excerpt | strip_html | truncatewords: 34 }}{% endif %}
+      </p>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <div class="prose"><p>Nothing here yet.</p></div>
+  {% endif %}
+
+  {% include mailing-list.html %}
+</article>

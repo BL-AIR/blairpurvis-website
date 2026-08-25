@@ -1,0 +1,32 @@
+<aside class="signup" aria-labelledby="signup-heading">
+  <h2 id="signup-heading">The mailing list</h2>
+  <p class="signup-promise">{{ site.mailing_list_promise }}</p>
+
+  {% if site.mailing_list_action and site.mailing_list_action != "" %}
+  <form class="signup-form" action="{{ site.mailing_list_action }}" method="post">
+    <div class="field-row">
+      <div class="field">
+        <label for="ml-first">First name</label>
+        <input type="text" id="ml-first" name="first_name" autocomplete="given-name">
+      </div>
+      <div class="field">
+        <label for="ml-last">Last name</label>
+        <input type="text" id="ml-last" name="last_name" autocomplete="family-name">
+      </div>
+    </div>
+    <div class="field">
+      <label for="ml-email">Email address</label>
+      <input type="email" id="ml-email" name="email" required autocomplete="email">
+    </div>
+    <button type="submit" class="button">Join the list</button>
+  </form>
+  {% else %}
+  <!-- The list isn't switched on yet. Set mailing_list_action in _config.yml
+       and the form above replaces this paragraph automatically. -->
+  <p class="signup-fallback">
+    The list isn't open yet. If you'd like to be on it when it is,
+    <a href="mailto:{{ site.author.email }}?subject=Mailing%20list">send me a line</a>
+    and I'll add you myself.
+  </p>
+  {% endif %}
+</aside>

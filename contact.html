@@ -1,0 +1,73 @@
+---
+layout: default
+title: Contact
+permalink: /contact/
+description: Get in touch with Blair Purvis.
+---
+
+<article class="sheet">
+  <header class="sheet-head">
+    <h1>Contact</h1>
+    <p class="standfirst">Readers, reviewers, booksellers and event organisers — all welcome.</p>
+  </header>
+
+  <div class="prose">
+
+    {% if site.form_endpoint and site.form_endpoint != "" %}
+    <form class="signup-form" action="{{ site.form_endpoint }}" method="post">
+
+      <div class="field">
+        <label for="c-name">Your name</label>
+        <input type="text" id="c-name" name="name" required autocomplete="name">
+      </div>
+
+      <div class="field">
+        <label for="c-email">Your email address</label>
+        <input type="email" id="c-email" name="email" required autocomplete="email">
+      </div>
+
+      <div class="field">
+        <label for="c-message">Message</label>
+        <textarea id="c-message" name="message" required></textarea>
+      </div>
+
+      <!-- Honeypot: hidden from people, irresistible to bots. -->
+      <div class="trap" aria-hidden="true">
+        <label for="c-website">Leave this empty</label>
+        <input type="text" id="c-website" name="website" tabindex="-1" autocomplete="off">
+      </div>
+
+      <button type="submit" class="button">Send</button>
+
+      <p style="font-size:.85em;color:var(--muted);margin-top:1rem">
+        Your message comes straight to my inbox. Your address is used to reply
+        and nothing else.
+      </p>
+    </form>
+
+    {% else %}
+    <!-- No Worker deployed yet, so the page offers a plain email link instead
+         of a form that would silently swallow messages. Set form_endpoint in
+         _config.yml and the form replaces this automatically. -->
+    <p>
+      The best way to reach me is by email:
+      <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>.
+      I read everything, and reply to most of it eventually.
+    </p>
+    {% endif %}
+
+    <h2>Press and events</h2>
+    <p>
+      Review copies, interviews, festival and radio enquiries: write to the same
+      address and say so in the subject line. Photographs, cover art and biographies
+      in the usual lengths are on the <a href="{{ '/press/' | relative_url }}">press&nbsp;kit</a> page.
+    </p>
+
+    <h2>Publishing</h2>
+    <p>
+      For anything to do with rights, distribution or trade orders, {{ site.publisher.name }}
+      handles it — <a href="{{ site.publisher.url }}">{{ site.publisher.url | remove: 'https://' }}</a>.
+    </p>
+
+  </div>
+</article>

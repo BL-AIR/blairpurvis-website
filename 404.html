@@ -1,0 +1,27 @@
+---
+layout: default
+title: Not found
+permalink: /404.html
+sitemap: false
+---
+
+<article class="sheet">
+  <header class="sheet-head">
+    <h1>There's nothing at this address.</h1>
+    <p class="standfirst">
+      A mislaid link, most likely, or something that has moved.
+    </p>
+  </header>
+
+  <div class="prose">
+    <p>
+      Try the <a href="{{ '/books/' | relative_url }}">books</a>,
+      the <a href="{{ '/writing/' | relative_url }}">writing</a>, or the
+      <a href="{{ '/' | relative_url }}">front page</a>.
+    </p>
+    <p>
+      If you followed a link from somewhere else and it brought you here,
+      <a href="mailto:{{ site.author.email }}">tell me</a> and I'll fix it.
+    </p>
+  </div>
+</article>

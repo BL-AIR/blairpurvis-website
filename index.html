@@ -1,0 +1,100 @@
+---
+layout: default
+title: Blair Purvis
+permalink: /
+---
+
+{% assign lead = site.data.books | first %}
+
+<section class="hero">
+  <div>
+    <p class="hero-eyebrow rise rise-1">New novel &middot; {{ lead.published | date: "%-d %B %Y" }}</p>
+
+    <h1 class="rise rise-2">The art of<br><em>surrender</em>.</h1>
+
+    <p class="hero-lede rise rise-3">
+      {{ lead.blurb }}
+    </p>
+
+    <div class="hero-actions rise rise-4">
+      {% assign links = lead.buy | where_exp: "b", "b.url" %}
+      {% if links.size > 0 %}
+      <a class="button" href="{{ links[0].url }}">Pre-order</a>
+      {% endif %}
+      <a class="button-ghost" href="{{ '/books/' | relative_url }}">Read more</a>
+    </div>
+
+    {% if lead.places %}
+    <ul class="itinerary rise rise-4">
+      {% for place in lead.places %}<li>{{ place }}</li>{% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+
+  <div class="hero-book rise rise-3">
+    {% include cover.html book=lead %}
+  </div>
+</section>
+
+<div class="ornament" aria-hidden="true"><span class="lozenge"></span></div>
+
+{% assign rest = site.data.books | slice: 1, 10 %}
+{% if rest.size > 0 %}
+<section class="section" aria-labelledby="books-head">
+  <h2 class="section-head" id="books-head">Also by Blair Purvis</h2>
+
+  <ul class="shelf">
+    {% for book in rest %}
+    <li>
+      {% include cover.html book=book %}
+
+      {% if book.role %}
+      <p class="book-status">{{ book.role }}{% if book.published %} &middot; {{ book.published | date: "%Y" }}{% endif %}</p>
+      {% elsif book.published %}
+      <p class="book-status">{{ book.published | date: "%Y" }}</p>
+      {% endif %}
+
+      <h3 class="book-title"><a href="{{ '/books/' | relative_url }}">{{ book.title }}</a></h3>
+      {% if book.logline %}<p class="book-logline">{{ book.logline }}</p>{% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}
+
+<section class="section" aria-labelledby="about-head">
+  <h2 class="section-head" id="about-head">About</h2>
+  <div class="prose">
+    <p>
+      Blair Purvis is a novelist living in Melbourne. His work is concerned with
+      desire, geography, and the slow, difficult business of being known — with
+      the distance between the private and public versions of a man, and what it
+      costs to close it.
+    </p>
+    <p><a href="{{ '/about/' | relative_url }}">More about Blair &rarr;</a></p>
+  </div>
+</section>
+
+{% if site.posts.size > 0 %}
+<div class="ornament" aria-hidden="true"><span class="lozenge"></span></div>
+
+<section class="section" aria-labelledby="writing-head">
+  <h2 class="section-head" id="writing-head">Writing</h2>
+
+  <ul class="entries">
+    {% for post in site.posts limit: 3 %}
+    <li>
+      <p class="entry-meta"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d %B %Y" }}</time></p>
+      <h3 class="entry-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+      {% if post.standfirst %}<p class="entry-excerpt">{{ post.standfirst }}</p>{% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+
+  <p style="margin-top:1.6rem"><a class="button-ghost" href="{{ '/writing/' | relative_url }}">All writing</a></p>
+</section>
+{% endif %}
+
+<div class="section">
+  {% include mailing-list.html %}
+</div>

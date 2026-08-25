@@ -1,0 +1,1101 @@
+/* ==========================================================================
+   Blair Purvis — blairpurvis.com
+   One stylesheet. Colours are defined once as tokens at the top; everything
+   below refers to them by name, so changing the palette means editing the
+   :root block and nothing else.
+   ========================================================================== */
+
+:root {
+  /* Light — bookcloth on laid paper */
+  --paper:        #f2f1ec;
+  --surface:      #fbfaf8;
+  --ink:          #1a1917;
+  --ink-soft:     #46433d;
+  --muted:        #6a665d;
+  --faint:        #918c82;
+  --rule:         #dedad1;
+  --rule-soft:    #e8e4dc;
+  --accent:       #7a2233;
+  --accent-hover: #5c1826;
+  --accent-soft:  #f0e2e3;
+  --gilt:         #866c35;
+
+  --measure: 34rem;
+  --gutter: 1.5rem;
+
+  --serif: "EB Garamond", Iowan Old Style, Palatino, Georgia, "Times New Roman", serif;
+  --sans:  "Karla", ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper:        #191817;
+    --surface:      #211f1d;
+    --ink:          #efece5;
+    --ink-soft:     #cdc7bd;
+    --muted:        #9d968b;
+    --faint:        #746e65;
+    --rule:         #35322c;
+    --rule-soft:    #272522;
+    --accent:       #d18d99;
+    --accent-hover: #e6a9b3;
+    --accent-soft:  #2d1c1f;
+    --gilt:         #c2a568;
+  }
+}
+
+:root[data-theme="dark"] {
+  --paper:        #191817;
+  --surface:      #211f1d;
+  --ink:          #efece5;
+  --ink-soft:     #cdc7bd;
+  --muted:        #9d968b;
+  --faint:        #746e65;
+  --rule:         #35322c;
+  --rule-soft:    #272522;
+  --accent:       #d18d99;
+  --accent-hover: #e6a9b3;
+  --accent-soft:  #2d1c1f;
+  --gilt:         #c2a568;
+}
+
+/* --------------------------------------------------------------- reset -- */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1.125rem;
+  line-height: 1.65;
+  font-feature-settings: "kern" 1, "liga" 1, "onum" 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (min-width: 40rem) {
+  body { font-size: 1.25rem; }
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+/* ---------------------------------------------------------------- links -- */
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+a:hover { color: var(--accent-hover); }
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 1px;
+}
+
+.skip {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--surface);
+  color: var(--ink);
+  padding: 0.75rem 1rem;
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  z-index: 100;
+}
+
+.skip:focus { left: 0.5rem; top: 0.5rem; }
+
+/* ------------------------------------------------------------- masthead -- */
+
+.masthead {
+  border-bottom: 1px solid var(--rule);
+  padding: 1.5rem var(--gutter) 1.25rem;
+}
+
+.masthead-inner {
+  max-width: 52rem;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem 2rem;
+}
+
+.wordmark {
+  text-decoration: none;
+  color: var(--ink);
+  display: flex;
+  align-items: baseline;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+.wordmark:hover { color: var(--ink); }
+
+.wordmark-name {
+  font-size: 1.5rem;
+  letter-spacing: 0.01em;
+}
+
+.wordmark-role {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.4rem;
+}
+
+.nav a {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+}
+
+.nav a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+.nav a[aria-current="page"] {
+  color: var(--ink);
+  border-bottom-color: var(--gilt);
+}
+
+/* ---------------------------------------------------------------- sheet -- */
+
+.sheet {
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: 3.5rem var(--gutter) 4rem;
+}
+
+.sheet-head { margin-bottom: 2.5rem; }
+
+.sheet-head h1 {
+  font-size: clamp(2rem, 6vw, 2.9rem);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -0.012em;
+  text-wrap: balance;
+  margin: 0;
+  max-width: 22ch;
+}
+
+.dateline {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 0.9rem;
+}
+
+.standfirst {
+  font-size: 1.2em;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  font-style: italic;
+  max-width: 32rem;
+  margin: 1.1rem 0 0;
+  text-wrap: pretty;
+}
+
+/* ---------------------------------------------------------------- prose -- */
+
+.prose { max-width: var(--measure); }
+
+.prose p,
+.prose ul,
+.prose ol,
+.prose blockquote { margin: 0 0 1.35em; }
+
+.prose > *:last-child { margin-bottom: 0; }
+
+.prose h2 {
+  font-size: 1.5em;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.005em;
+  text-wrap: balance;
+  margin: 2.4em 0 0.7em;
+}
+
+.prose h3 {
+  font-family: var(--sans);
+  font-size: 0.82em;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 2.2em 0 0.6em;
+}
+
+.prose blockquote {
+  border-left: 2px solid var(--gilt);
+  padding-left: 1.2em;
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+.prose hr {
+  border: 0;
+  height: 1px;
+  background: var(--rule);
+  margin: 3em 0;
+}
+
+.prose code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.85em;
+  background: var(--rule-soft);
+  padding: 0.1em 0.35em;
+  border-radius: 2px;
+}
+
+.prose figure { margin: 2.5em 0; }
+
+.prose figcaption {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-top: 0.6em;
+  line-height: 1.45;
+}
+
+/* Drop cap — posts only, and only where it can't collide with a heading. */
+.prose-post > p:first-of-type::first-letter {
+  float: left;
+  font-size: 3.4em;
+  line-height: 0.82;
+  padding: 0.06em 0.09em 0 0;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+/* ------------------------------------------------------------ home page -- */
+
+.overture {
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: 4rem var(--gutter) 1rem;
+}
+
+.overture h1 {
+  font-size: clamp(2.1rem, 7vw, 3.4rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+  margin: 0 0 1.2rem;
+  max-width: 18ch;
+}
+
+.overture .lede {
+  font-size: 1.15em;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  max-width: 30rem;
+  margin: 0;
+  text-wrap: pretty;
+}
+
+.section {
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: 3rem var(--gutter);
+}
+
+.section + .section { padding-top: 0; }
+
+.section-head {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 1.5rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+/* ------------------------------------------------------- the book shelf --
+   The one horizontal gesture on the site, and it earns its place: a shelf
+   is a thing you move along. Native scroll-snap — no hijacked wheel, works
+   with touch, and degrades to an ordinary scroll if anything fails.
+   -------------------------------------------------------------------------- */
+
+.shelf {
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  padding: 0.25rem 0 1.5rem;
+  margin: 0;
+  list-style: none;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+
+.shelf > li {
+  scroll-snap-align: start;
+  flex: 0 0 min(20rem, 82vw);
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  padding: 1.6rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.book-status {
+  font-family: var(--sans);
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gilt);
+}
+
+.book-title {
+  font-size: 1.35rem;
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0;
+  text-wrap: balance;
+}
+
+.book-title a { color: var(--ink); text-decoration: none; }
+.book-title a:hover { color: var(--accent); }
+
+.book-logline {
+  color: var(--ink-soft);
+  font-style: italic;
+  font-size: 0.95em;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.book-cover {
+  width: 100%;
+  border: 1px solid var(--rule);
+  margin-bottom: 0.4rem;
+}
+
+.buy {
+  list-style: none;
+  margin: 0.4rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+}
+
+/* --------------------------------------------------------- writing list -- */
+
+.entries {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.entries > li {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+.entries > li:first-child { padding-top: 0; }
+.entries > li:last-child { border-bottom: none; }
+
+.entry-title {
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 1.25;
+  margin: 0 0 0.3rem;
+  text-wrap: balance;
+}
+
+.entry-title a { color: var(--ink); text-decoration: none; }
+.entry-title a:hover { color: var(--accent); text-decoration: underline; }
+
+.entry-meta {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 0.5rem;
+}
+
+.entry-excerpt {
+  color: var(--ink-soft);
+  margin: 0;
+  max-width: var(--measure);
+  font-size: 0.98em;
+}
+
+/* ------------------------------------------------------------- post nav -- */
+
+.post-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  justify-content: space-between;
+  margin: 3.5rem 0 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+}
+
+.post-nav-link {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  max-width: 15rem;
+}
+
+.post-nav-next { text-align: right; margin-left: auto; }
+
+.post-nav-dir {
+  font-family: var(--sans);
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.post-nav-title {
+  color: var(--ink);
+  font-size: 1.02rem;
+  line-height: 1.3;
+}
+
+.post-nav-link:hover .post-nav-title { color: var(--accent); }
+
+/* ------------------------------------------------------- signup & forms -- */
+
+.signup {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-top: 2px solid var(--gilt);
+  padding: 1.9rem 1.6rem;
+  margin: 3.5rem 0 0;
+  max-width: var(--measure);
+}
+
+.signup h2 {
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 0.8rem;
+  font-weight: 600;
+}
+
+.signup-promise,
+.signup-fallback {
+  margin: 0 0 1.2rem;
+  font-size: 0.98em;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+.signup-fallback { margin-bottom: 0; }
+
+.field-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.field-row .field { flex: 1 1 10rem; }
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+.field label {
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  font-family: var(--serif);
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  padding: 0.6rem 0.7rem;
+  width: 100%;
+  border-radius: 2px;
+}
+
+textarea { min-height: 9rem; resize: vertical; line-height: 1.5; }
+
+.button {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--surface);
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 0.7rem 1.4rem;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.button:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+
+:root[data-theme="dark"] .button,
+:root[data-theme="dark"] .button:hover { color: #1a1917; }
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .button,
+  :root:not([data-theme="light"]) .button:hover { color: #1a1917; }
+}
+
+/* Honeypot — a field real people never see and never fill in. */
+.trap {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* ----------------------------------------------------------- press kit -- */
+
+.kit {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 1rem;
+}
+
+.kit > li {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  padding: 1.2rem 1.3rem;
+}
+
+.kit h3 {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 0.5rem;
+  font-weight: 600;
+}
+
+.kit p { margin: 0; font-size: 0.95em; line-height: 1.5; }
+
+/* ------------------------------------------------------------ colophon -- */
+
+.colophon {
+  border-top: 1px solid var(--rule);
+  margin-top: 4rem;
+  padding: 2.5rem var(--gutter) 3.5rem;
+}
+
+.colophon-inner {
+  max-width: 52rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.colophon-line {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+
+.colophon-quiet { color: var(--muted); font-size: 0.78rem; }
+
+.elsewhere ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.2rem;
+  font-family: var(--sans);
+  font-size: 0.82rem;
+}
+
+/* --------------------------------------------------------------- print -- */
+
+@media print {
+  .masthead, .nav, .colophon, .signup, .post-nav, .skip { display: none; }
+  body { background: #fff; color: #000; font-size: 11pt; }
+  .prose { max-width: none; }
+  a { color: #000; text-decoration: underline; }
+}
+
+/* ==========================================================================
+   TEXTURE, ORNAMENT & BINDINGS
+   Added after the first pass, which read as too plain. Everything below is
+   drawn in CSS — no image files, nothing to load, nothing to go missing.
+   ========================================================================== */
+
+/* Paper grain. A fractal-noise SVG tiled at very low opacity — the thing that
+   separates "off-white" from "paper". Costs one line and no HTTP request. */
+body {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) body { background-blend-mode: screen; }
+}
+:root[data-theme="dark"] body { background-blend-mode: screen; }
+
+/* Gilt hairline under the masthead — the gold stamp on a cloth cover. */
+.masthead {
+  border-bottom: none;
+  box-shadow: 0 1px 0 var(--rule), 0 2px 0 var(--gilt-hair);
+  position: relative;
+}
+
+:root { --gilt-hair: rgba(134, 108, 53, 0.28); }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --gilt-hair: rgba(194, 165, 104, 0.22); }
+}
+:root[data-theme="dark"] { --gilt-hair: rgba(194, 165, 104, 0.22); }
+
+/* ------------------------------------------------------------------ hero -- */
+
+.hero {
+  max-width: 62rem;
+  margin: 0 auto;
+  padding: clamp(3rem, 9vw, 6.5rem) var(--gutter) clamp(2.5rem, 5vw, 4rem);
+  display: grid;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+}
+
+@media (min-width: 52rem) {
+  .hero { grid-template-columns: 1.35fr 0.65fr; }
+}
+
+.hero-eyebrow {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gilt);
+  margin: 0 0 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.hero-eyebrow::after {
+  content: "";
+  flex: 1 1 auto;
+  height: 1px;
+  background: linear-gradient(to right, var(--gilt), transparent);
+  opacity: 0.5;
+}
+
+.hero h1 {
+  font-size: clamp(2.6rem, 8.5vw, 5rem);
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: -0.028em;
+  margin: 0 0 1.3rem;
+  text-wrap: balance;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.hero-lede {
+  font-size: clamp(1.05rem, 2.2vw, 1.28rem);
+  line-height: 1.5;
+  color: var(--ink-soft);
+  max-width: 30rem;
+  margin: 0 0 1.8rem;
+  text-wrap: pretty;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem 1.4rem;
+  align-items: center;
+}
+
+.button-ghost {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--gilt);
+  padding-bottom: 3px;
+}
+
+.button-ghost:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* The itinerary — the book's five countries, set as a route. Specific to
+   this novel, and it does the work a decorative flourish can't. */
+.itinerary {
+  list-style: none;
+  margin: 2.6rem 0 0;
+  padding: 1.1rem 0 0;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0;
+  font-family: var(--sans);
+  font-size: 0.66rem;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.itinerary li { display: flex; align-items: center; }
+
+.itinerary li:not(:last-child)::after {
+  content: "";
+  width: clamp(0.9rem, 3vw, 2.2rem);
+  height: 1px;
+  background: var(--gilt);
+  opacity: 0.55;
+  margin: 0 0.6rem;
+}
+
+/* --------------------------------------------------------------- bindings -- */
+
+.plate {
+  aspect-ratio: 2 / 3;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6%;
+  position: relative;
+  box-shadow:
+    inset 0 0 0 1px rgba(0,0,0,.35),
+    inset 0.35rem 0 0.9rem -0.5rem rgba(0,0,0,.55),
+    0 1px 2px rgba(20,18,16,.18),
+    0 14px 34px -18px rgba(20,18,16,.6);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='c'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23c)' opacity='0.13'/%3E%3C/svg%3E"),
+    linear-gradient(150deg, rgba(255,255,255,.09), rgba(0,0,0,.22));
+  background-blend-mode: overlay, normal;
+}
+
+.plate-burgundy { background-color: #6b1f2c; }
+.plate-forest   { background-color: #1f3d30; }
+.plate-indigo   { background-color: #24304e; }
+.plate-tan      { background-color: #7a6242; }
+
+.plate-inner {
+  border: 1px solid rgba(201, 169, 97, 0.55);
+  outline: 1px solid rgba(201, 169, 97, 0.25);
+  outline-offset: 4px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 8% 10%;
+  text-align: center;
+}
+
+.plate-rule {
+  width: 38%;
+  height: 1px;
+  background: rgba(201, 169, 97, 0.65);
+}
+
+.plate-title {
+  font-family: var(--serif);
+  font-size: clamp(1rem, 2.6vw, 1.45rem);
+  line-height: 1.2;
+  color: #d9bd80;
+  letter-spacing: 0.02em;
+  text-wrap: balance;
+}
+
+.plate-author {
+  font-family: var(--sans);
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(217, 189, 128, 0.8);
+  margin-top: 0.4rem;
+}
+
+.cover-image {
+  width: 100%;
+  box-shadow: 0 1px 2px rgba(20,18,16,.18), 0 14px 34px -18px rgba(20,18,16,.6);
+}
+
+.hero-book { max-width: 17rem; margin: 0 auto; width: 100%; }
+
+/* -------------------------------------------------------------- ornament -- */
+
+.ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  margin: 0 auto;
+  padding: 2.5rem var(--gutter);
+  max-width: 52rem;
+  color: var(--gilt);
+}
+
+.ornament::before,
+.ornament::after {
+  content: "";
+  flex: 1 1 auto;
+  height: 1px;
+  background: var(--rule);
+  max-width: 11rem;
+}
+
+.ornament span {
+  font-size: 0.7rem;
+  letter-spacing: 0.4em;
+  opacity: 0.8;
+}
+
+/* ----------------------------------------------------------- shelf tweaks -- */
+
+.shelf > li {
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  padding: 1.5rem 1.4rem 1.7rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shelf > li { transition: none; }
+}
+
+.shelf > li:hover {
+  transform: translateY(-3px);
+  border-color: var(--gilt-hair);
+  box-shadow: 0 14px 30px -22px rgba(20,18,16,.75);
+}
+
+.shelf .plate,
+.shelf .cover-image { margin-bottom: 1.1rem; }
+
+/* ---------------------------------------------------------- prose flourish -- */
+
+/* First line of a post in small caps, following the drop cap. Straight out
+   of book typography, and it costs nothing. */
+.prose-post > p:first-of-type::first-line {
+  font-variant-caps: small-caps;
+  letter-spacing: 0.04em;
+}
+
+/* Blockquotes become proper pull quotes. */
+.prose blockquote {
+  border-left: 0;
+  padding: 0.2em 0 0.2em 0;
+  margin: 2.2em 0;
+  font-size: 1.22em;
+  line-height: 1.45;
+  color: var(--ink);
+  position: relative;
+  text-align: center;
+}
+
+.prose blockquote::before,
+.prose blockquote::after {
+  content: "";
+  display: block;
+  width: 3.5rem;
+  height: 1px;
+  background: var(--gilt);
+  opacity: 0.6;
+  margin: 0.9em auto;
+}
+
+/* Links in running prose get a gilt underline that fills in on hover. */
+.prose p > a,
+.prose li > a {
+  text-decoration: none;
+  background-image: linear-gradient(var(--gilt), var(--gilt));
+  background-repeat: no-repeat;
+  background-size: 100% 1px;
+  background-position: 0 1.08em;
+  transition: background-size .2s ease;
+  padding-bottom: 1px;
+}
+
+.prose p > a:hover,
+.prose li > a:hover {
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-size: 100% 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .prose p > a, .prose li > a { transition: none; }
+}
+
+/* ----------------------------------------------------------------- entry -- */
+
+.entries > li {
+  position: relative;
+  padding-left: 0;
+}
+
+.entry-title a {
+  background-image: linear-gradient(var(--gilt), var(--gilt));
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  background-position: 0 1.15em;
+  transition: background-size .25s ease;
+}
+
+.entries > li:hover .entry-title a { background-size: 100% 1px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .entry-title a { transition: none; }
+}
+
+/* ---------------------------------------------------------------- signup -- */
+
+.signup {
+  border-top-width: 1px;
+  position: relative;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='s'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23s)' opacity='0.05'/%3E%3C/svg%3E");
+}
+
+.signup::before {
+  content: "❧";
+  position: absolute;
+  top: -0.85rem;
+  left: 1.5rem;
+  background: var(--surface);
+  color: var(--gilt);
+  font-size: 1rem;
+  line-height: 1;
+  padding: 0 0.5rem;
+}
+
+/* ---------------------------------------------------------------- motion -- */
+
+@media (prefers-reduced-motion: no-preference) {
+  .rise {
+    animation: rise .7s cubic-bezier(.2,.7,.3,1) backwards;
+  }
+  .rise-1 { animation-delay: .05s; }
+  .rise-2 { animation-delay: .16s; }
+  .rise-3 { animation-delay: .27s; }
+  .rise-4 { animation-delay: .38s; }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(0.9rem); }
+    to   { opacity: 1; transform: none; }
+  }
+}
+
+/* ---- corrections after the first visual pass ---------------------------- */
+
+.ornament { padding: 1.25rem var(--gutter) 2rem; }
+
+.ornament span {
+  font-size: 1.15rem;
+  letter-spacing: 0;
+  line-height: 1;
+  opacity: 0.75;
+}
+
+.hero { padding-bottom: clamp(1.5rem, 3vw, 2.5rem); }
+
+/* Keep the bindings on the shelf modest — they sit beside text, not instead
+   of it, so they shouldn't dominate the card. */
+.shelf .plate,
+.shelf .cover-image {
+  max-width: 8.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.shelf > li { align-items: flex-start; }
+
+/* A drawn ornament rather than a glyph — some systems substitute an emoji
+   font for typographic marks, which turns a fleuron into a coloured blob. */
+.ornament span.lozenge {
+  width: 7px;
+  height: 7px;
+  background: var(--gilt);
+  transform: rotate(45deg);
+  opacity: 0.7;
+  flex: 0 0 auto;
+}
+
+.ornament span.lozenge::before,
+.ornament span.lozenge::after {
+  content: "";
+  position: absolute;
+}
+
+.signup::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  background: var(--gilt);
+  transform: rotate(45deg);
+  top: -4px;
+  left: 1.6rem;
+  padding: 0;
+  opacity: 0.85;
+}
