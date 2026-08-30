@@ -18,12 +18,35 @@
   cloth: burgundy   # binding colour used until there's a cover: burgundy, forest, indigo, tan
   places: [Morocco, Gibraltar, Switzerland, Berlin, Sydney]
   logline: A novel about power, shame, and the cost of allowing yourself to be truly known.
-  blurb: >-
-    Ayman Saliba and Lucas Pfifer meet as strangers and spend twenty years
-    becoming something neither of them can name. Across Morocco, Gibraltar,
-    Switzerland, Berlin and Sydney, theirs is a relationship conducted in
-    the gaps between countries — in borrowed rooms, in languages half-learned,
-    in the long silences that follow an honest sentence.
+  # `lede` is the hero paragraph on the home page. `blurb` is the full back-cover
+  # copy and renders on /books/ as real paragraphs.
+  lede: >-
+    Ayman Saliba arrives in Morocco looking for permission. Lucas Pfifer
+    arrives already fluent in concealment.
+  blurb: |
+    Ayman Saliba arrives in Morocco looking for permission. Lucas Pfifer
+    arrives already fluent in concealment.
+
+    In the heat and steam of a Moroccan ḥammām, two men meet where anonymity
+    makes desire possible. Ayman is practical, watchful, newly honest with
+    himself and not yet honest with everyone else. Lucas is beautiful,
+    wealthy, controlled — a man who has learned to make damage look like
+    elegance.
+
+    What begins as a brief encounter becomes something neither of them can
+    keep contained. From Morocco to Gibraltar, from the decks of the Phoenix
+    to the snowfields of Switzerland and the ruinous appetites of Berlin,
+    Ayman and Lucas are drawn into a love that exposes every imbalance
+    between them: money and pride, secrecy and truth, care and control.
+
+    But Lucas has a past that still knows how to call him back. Lazarus
+    understands the part of him that believes surrender must hurt. And Ayman,
+    loving him, must face the harder question: whether protecting a man can
+    become another way of possessing him.
+
+    *The Art of Surrender* is a sensual, psychologically charged novel about
+    what we mistake for love, and what it costs to be truly seen, and still
+    misunderstood.
   buy:
     - name: Pre-order from Prahran Publishing
       url: https://www.prahran.press/authors/blair-purvis/
@@ -40,9 +63,9 @@
   cover: born-from-mauritanian-sands.jpg
   cloth: forest
   era: 1835
-  logline: Book One of the Generations trilogy, Dawn of the Eighth Sense.
+  logline: Book One of the Dawn of the Eighth Sense trilogy.
   blurb: >-
-    Historical fantasy set in the Middle East between 1835 and 1900, drawing
+    Historical fantasy set in the Middle East between 1835 and 1855, drawing
     on Zoroastrian belief and figures.
   buy:
     # - name: Amazon
@@ -52,7 +75,7 @@
   cover: gypsy-in-the-shahs-harem.jpg
   cloth: forest
   era: 1855
-  logline: Book Two of the Generations trilogy, Dawn of the Eighth Sense.
+  logline: Book Two of the Dawn of the Eighth Sense trilogy.
   # blurb: add a paragraph here when you're ready — the page simply omits it
   #        while it's commented out.
 
@@ -60,6 +83,6 @@
   cover: the-second-heir.jpg
   cloth: forest
   era: 1880
-  logline: Book Three of the Generations trilogy, Dawn of the Eighth Sense.
+  logline: Book Three of the Dawn of the Eighth Sense trilogy.
   # blurb: add a paragraph here when you're ready — the page simply omits it
   #        while it's commented out.

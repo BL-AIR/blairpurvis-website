@@ -34,7 +34,7 @@ description: Books by Blair Purvis, including The Art of Surrender.
     {% endif %}
 
     {% if book.logline %}<p class="book-logline" style="margin-top:1.4rem">{{ book.logline }}</p>{% endif %}
-    {% if book.blurb %}<p>{{ book.blurb }}</p>{% endif %}
+    {% if book.blurb %}{{ book.blurb | markdownify }}{% endif %}
 
     {% assign links = book.buy | where_exp: "b", "b.url" %}
     {% if links.size > 0 %}

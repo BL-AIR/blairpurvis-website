@@ -103,9 +103,9 @@
   --faint:        #918c82;
   --rule:         #dedad1;
   --rule-soft:    #e8e4dc;
-  --accent:       #7a2233;
-  --accent-hover: #5c1826;
-  --accent-soft:  #f0e2e3;
+  --accent:       #6b4a1e;   /* lit stone of the arch, from the cover */
+  --accent-hover: #4e3512;
+  --accent-soft:  #efe7d8;
   --gilt:         #866c35;
 
   --measure: 34rem;
@@ -125,9 +125,9 @@
     --faint:        #746e65;
     --rule:         #35322c;
     --rule-soft:    #272522;
-    --accent:       #d18d99;
-    --accent-hover: #e6a9b3;
-    --accent-soft:  #2d1c1f;
+    --accent:       #dcb87a;   /* the cover's gold */
+    --accent-hover: #f0d39d;   /* the cream the title is set in */
+    --accent-soft:  #2a2117;
     --gilt:         #c2a568;
   }
 }
@@ -141,9 +141,9 @@
   --faint:        #746e65;
   --rule:         #35322c;
   --rule-soft:    #272522;
-  --accent:       #d18d99;
-  --accent-hover: #e6a9b3;
-  --accent-soft:  #2d1c1f;
+  --accent:       #dcb87a;   /* the cover's gold */
+  --accent-hover: #f0d39d;   /* the cream the title is set in */
+  --accent-soft:  #2a2117;
   --gilt:         #c2a568;
 }
 
