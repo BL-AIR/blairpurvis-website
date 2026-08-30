@@ -750,14 +750,31 @@ textarea { min-height: 9rem; resize: vertical; line-height: 1.5; }
 
 .elsewhere ul {
   list-style: none;
-  margin: 0;
+  margin: 0.15rem 0;
   padding: 0;
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 0.4rem 1.2rem;
-  font-family: var(--sans);
-  font-size: 0.82rem;
+  gap: 1.15rem;
 }
+
+.elsewhere a {
+  display: inline-flex;
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 0;
+  transition: color 0.18s ease;
+}
+
+.elsewhere a:hover,
+.elsewhere a:focus-visible { color: var(--accent); }
+
+.elsewhere a:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.elsewhere svg { width: 20px; height: 20px; display: block; }
 
 /* --------------------------------------------------------------- print -- */
 

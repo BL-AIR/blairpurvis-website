@@ -70,19 +70,33 @@ gtm_consent_default_denied: true
 # Delete a line to remove it from the site. Add one to put it back.
 # ---------------------------------------------------------------------------
 
+# Rendered as icons in the footer. `icon:` picks the glyph from
+# _includes/social-icons.html — add a new one there before using a new name.
+# A mailto: url is left untargeted; everything else opens in a new tab.
 social:
-  - name: Goodreads
-    url: https://www.goodreads.com/author/show/17782851.Blair_Purvis
   - name: Instagram
-    url: https://www.instagram.com/blairpurvisauthor/
-  # - name: Facebook
-  #   url: https://www.facebook.com/Purvis.Blair/
-  # - name: Amazon
-  #   url: https://www.amazon.com/Blair-Purvis/e/B07CCMMGNY
-  # - name: TikTok
-  #   url:
-  # - name: YouTube
-  #   url:
+    icon: instagram
+    url: https://www.instagram.com/blairpurvisauthor
+  - name: Facebook
+    icon: facebook
+    url: https://www.facebook.com/profile.php?id=61593616701662
+  - name: TikTok
+    icon: tiktok
+    url: https://www.tiktok.com/@blairpurvis.author
+  - name: YouTube
+    icon: youtube
+    url: https://www.youtube.com/channel/UCL0FUyK6clBPpzYIaZLiw4Q
+  - name: Substack
+    icon: substack
+    url: https://substack.com/@blairpurvis
+  - name: Email
+    icon: email
+    url: mailto:me@blairpurvis.com
+  # Goodreads was a text link here before the icons went in. There is no
+  # Goodreads glyph in the set yet, so it is parked rather than dropped:
+  # - name: Goodreads
+  #   icon: goodreads
+  #   url: https://www.goodreads.com/author/show/17782851.Blair_Purvis
 
 publisher:
   name: Prahran Publishing

@@ -6,15 +6,7 @@
       Melbourne.
     </p>
 
-    {% if site.social and site.social.size > 0 %}
-    <nav class="elsewhere" aria-label="Elsewhere">
-      <ul>
-        {% for s in site.social %}{% if s.url %}
-        <li><a href="{{ s.url }}" rel="me">{{ s.name }}</a></li>
-        {% endif %}{% endfor %}
-      </ul>
-    </nav>
-    {% endif %}
+    {% include social-icons.html %}
 
     <p class="colophon-line colophon-quiet">
       <a href="{{ '/press/' | relative_url }}">Press&nbsp;kit</a>
