@@ -1,6 +1,13 @@
 <header class="masthead">
   <div class="masthead-inner">
     <a class="wordmark" href="{{ '/' | relative_url }}">
+      {% comment %}
+        The mark is painted with CSS rather than drawn as an <img>: the PNG is
+        an alpha mask and background-color does the colouring, so it follows
+        the theme without a second file. aria-hidden because the link already
+        says "Blair Purvis".
+      {% endcomment %}
+      <span class="wordmark-mark" aria-hidden="true"></span>
       <span class="wordmark-name">Blair Purvis</span>
       <span class="wordmark-role">{{ site.tagline }}</span>
     </a>

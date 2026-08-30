@@ -235,6 +235,32 @@ textarea:focus-visible {
   flex-wrap: wrap;
 }
 
+/* The typewriter mark. The file is an alpha mask, not a picture — the colour
+   comes from background-color, so one asset serves both themes and matches
+   'Surrender' in the hero exactly. */
+.wordmark-mark {
+  flex: 0 0 auto;
+  align-self: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  background-color: var(--title-surr);
+  -webkit-mask-image: url("/assets/img/bp-logo-mask.png");
+          mask-image: url("/assets/img/bp-logo-mask.png");
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+          mask-position: center;
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  transition: background-color 0.18s ease;
+}
+
+/* If a browser can't mask, the empty span would be an invisible gap — collapse
+   it rather than leave a hole in the masthead. */
+@supports not ((mask-image: url("#x")) or (-webkit-mask-image: url("#x"))) {
+  .wordmark-mark { display: none; }
+}
+
 .wordmark:hover { color: var(--ink); }
 
 .wordmark-name {
