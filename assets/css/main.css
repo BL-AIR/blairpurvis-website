@@ -469,6 +469,15 @@ textarea:focus-visible {
   color: var(--gilt);
 }
 
+.cover-era {
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  color: var(--muted);
+  text-align: center;
+  margin: 0.6rem 0 0;
+}
+
 .book-title {
   font-size: 1.35rem;
   font-weight: 500;

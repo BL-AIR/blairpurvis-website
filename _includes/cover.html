@@ -8,6 +8,9 @@
 
   Set `cloth:` on a book to choose the binding colour:
   burgundy (default), forest, indigo, or tan.
+
+  Set `era:` to print a year beneath the cover — the year carried on that
+  book's spine. Omit it and nothing is drawn.
 {% endcomment %}
 
 {% assign b = include.book %}
@@ -17,6 +20,7 @@
        src="{{ '/assets/img/' | append: b.cover | relative_url }}"
        alt="Cover of {{ b.title }}"
        loading="lazy">
+  {% if b.era %}<p class="cover-era">{{ b.era }}</p>{% endif %}
 {% else %}
   <div class="plate plate-{{ b.cloth | default: 'burgundy' }}" role="img"
        aria-label="{{ b.title }} by Blair Purvis">
@@ -27,4 +31,5 @@
       <span class="plate-author">Blair Purvis</span>
     </div>
   </div>
+  {% if b.era %}<p class="cover-era">{{ b.era }}</p>{% endif %}
 {% endif %}

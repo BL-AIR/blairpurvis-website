@@ -14,7 +14,7 @@
 - title: The Art of Surrender
   status: forthcoming
   published: 2026-10-15
-  cover:            # e.g. art-of-surrender.jpg — add to assets/img/
+  cover: art-of-surrender.jpg
   cloth: burgundy   # binding colour used until there's a cover: burgundy, forest, indigo, tan
   places: [Morocco, Gibraltar, Switzerland, Berlin, Sydney]
   logline: A novel about power, shame, and the cost of allowing yourself to be truly known.
@@ -39,9 +39,10 @@
 - title: Born from Mauritanian Sands
   status: published
   published: 2018-08-30
-  cover:
+  cover: born-from-mauritanian-sands.jpg
   cloth: forest
-  logline: The first book of the Generations sequence.
+  era: 1835
+  logline: Book One of the Generations trilogy, Dawn of the Eighth Sense.
   blurb: >-
     Historical fantasy set in the Middle East between 1835 and 1900, drawing
     on Zoroastrian belief and figures.
@@ -49,15 +50,18 @@
     # - name: Amazon
     #   url:
 
-- title: Have Colourful Dreams, Sir
-  status: published
-  role: Editor
-  cover:
-  cloth: indigo
-  logline: A play by Masoud Shakarami, translated by Kioomars Ghanbari Azar.
+- title: Gypsy in the Shah's Harem
+  cover: gypsy-in-the-shahs-harem.jpg
+  cloth: forest
+  era: 1855
+  logline: Book Two of the Generations trilogy, Dawn of the Eighth Sense.
   blurb: >-
-    Published by Prahran Publishing in English paperback, script edition, and
-    Spanish translation.
-  buy:
-    - name: Prahran Publishing
-      url: https://www.prahran.press
+    TODO — Blair to write. Nothing is drawn if this stays empty.
+
+- title: The Second Heir
+  cover: the-second-heir.jpg
+  cloth: forest
+  era: 1880
+  logline: Book Three of the Generations trilogy, Dawn of the Eighth Sense.
+  blurb: >-
+    TODO — Blair to write. Nothing is drawn if this stays empty.
