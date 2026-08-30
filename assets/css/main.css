@@ -104,6 +104,7 @@
   --rule:         #dedad1;
   --rule-soft:    #e8e4dc;
   --accent:       #6b4a1e;   /* lit stone of the arch, from the cover */
+  --title:        #855d14;   /* the cover's title cream, darkened to read on paper */
   --accent-hover: #4e3512;
   --accent-soft:  #efe7d8;
   --gilt:         #866c35;
@@ -126,6 +127,7 @@
     --rule:         #35322c;
     --rule-soft:    #272522;
     --accent:       #dcb87a;   /* the cover's gold */
+    --title:        #f0d39d;   /* sampled straight off the cover */
     --accent-hover: #f0d39d;   /* the cream the title is set in */
     --accent-soft:  #2a2117;
     --gilt:         #c2a568;
@@ -142,6 +144,7 @@
   --rule:         #35322c;
   --rule-soft:    #272522;
   --accent:       #dcb87a;   /* the cover's gold */
+  --title:        #f0d39d;   /* sampled straight off the cover */
   --accent-hover: #f0d39d;   /* the cream the title is set in */
   --accent-soft:  #2a2117;
   --gilt:         #c2a568;
@@ -859,11 +862,14 @@ body {
   letter-spacing: -0.028em;
   margin: 0 0 1.3rem;
   text-wrap: balance;
+  color: var(--title);
 }
 
+/* On the cover, `of` is set in the same cream as the rest of the title — it is
+   distinguished by the italic and the size, not by colour. */
 .hero h1 em {
   font-style: italic;
-  color: var(--accent);
+  color: inherit;
 }
 
 .hero-lede {
