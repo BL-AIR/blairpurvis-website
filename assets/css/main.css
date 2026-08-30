@@ -104,7 +104,8 @@
   --rule:         #dedad1;
   --rule-soft:    #e8e4dc;
   --accent:       #6b4a1e;   /* lit stone of the arch, from the cover */
-  --title:        #855d14;   /* the cover's title cream, darkened to read on paper */
+  --title-art:    #7b5614;   /* 'The Art of' — #EFD29E darkened to read on paper */
+  --title-surr:   #6b5a24;   /* 'Surrender'  — #E4D7AE darkened to read on paper */
   --accent-hover: #4e3512;
   --accent-soft:  #efe7d8;
   --gilt:         #866c35;
@@ -127,7 +128,8 @@
     --rule:         #35322c;
     --rule-soft:    #272522;
     --accent:       #dcb87a;   /* the cover's gold */
-    --title:        #f0d39d;   /* sampled straight off the cover */
+    --title-art:    #efd29e;   /* 'The Art of', exact from the cover */
+    --title-surr:   #e4d7ae;   /* 'Surrender', exact from the cover */
     --accent-hover: #f0d39d;   /* the cream the title is set in */
     --accent-soft:  #2a2117;
     --gilt:         #c2a568;
@@ -144,7 +146,8 @@
   --rule:         #35322c;
   --rule-soft:    #272522;
   --accent:       #dcb87a;   /* the cover's gold */
-  --title:        #f0d39d;   /* sampled straight off the cover */
+  --title-art:    #efd29e;   /* 'The Art of', exact from the cover */
+  --title-surr:   #e4d7ae;   /* 'Surrender', exact from the cover */
   --accent-hover: #f0d39d;   /* the cream the title is set in */
   --accent-soft:  #2a2117;
   --gilt:         #c2a568;
@@ -862,8 +865,12 @@ body {
   letter-spacing: -0.028em;
   margin: 0 0 1.3rem;
   text-wrap: balance;
-  color: var(--title);
 }
+
+/* The cover sets the two lines in two slightly different creams, so they get
+   a token each rather than one shared title colour. */
+.hero h1 .t-art  { color: var(--title-art); }
+.hero h1 .t-surr { color: var(--title-surr); }
 
 /* On the cover, `of` is set in the same cream as the rest of the title — it is
    distinguished by the italic and the size, not by colour. */
