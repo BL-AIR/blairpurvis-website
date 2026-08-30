@@ -439,20 +439,15 @@ textarea:focus-visible {
    -------------------------------------------------------------------------- */
 
 .shelf {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
   gap: 1.25rem;
-  overflow-x: auto;
-  scroll-snap-type: x proximity;
   padding: 0.25rem 0 1.5rem;
   margin: 0;
   list-style: none;
-  scrollbar-width: thin;
-  -webkit-overflow-scrolling: touch;
 }
 
 .shelf > li {
-  scroll-snap-align: start;
-  flex: 0 0 min(20rem, 82vw);
   background: var(--surface);
   border: 1px solid var(--rule);
   padding: 1.6rem 1.5rem;
