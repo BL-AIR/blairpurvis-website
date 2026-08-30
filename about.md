@@ -27,13 +27,14 @@ of being known — with the distance between the private and public versions of 
 man, and what it costs to close it.
 
 He was born in Melbourne to Scottish parents and grew up in the city's outer
-east. He has lived in the United States, Canada and Europe, and travelled widely
-through the Middle East and Asia; the places turn up in the work, usually
-changed. He returned to Melbourne, where he writes, publishes, and engineers
-sound for community radio.
+east. He has lived in Europe and spent considerable time in the Americas — both
+North & Central. He's travelled widely through the Middle East, North Africa and
+Asia, places that take centre stage in his work. He returned to Melbourne, where
+he writes, publishes, edits and engineers sound for
+[community radio](https://matm.com.au).
 
-He is a gay man and a father of two, raised in a co-parenting arrangement he
-would recommend to anyone with the patience for it.
+He is a gay man and a father of two, raised in a co-parenting arrangement that he
+would recommend to anyone with the inkling for it.
 
 His third book, *The Art of Surrender*, is published on 15 October 2026.
 

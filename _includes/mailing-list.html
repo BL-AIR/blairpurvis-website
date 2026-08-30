@@ -2,27 +2,86 @@
   <h2 id="signup-heading">The mailing list</h2>
   <p class="signup-promise">{{ site.mailing_list_promise }}</p>
 
-  {% if site.mailing_list_action and site.mailing_list_action != "" %}
-  <form class="signup-form" action="{{ site.mailing_list_action }}" method="post">
+  {% if site.mailing_list_action and site.mailing_list_action != "" and site.zoho.ld %}
+  {% comment %}
+    Posts straight to Zoho Campaigns rather than embedding Zoho's own iframe,
+    so the form takes this site's type and colours. The hidden fields below
+    are what Zoho uses to identify the form and the list — they live in
+    _config.yml, not here. Double opt-in, so nobody joins without confirming.
+  {% endcomment %}
+  <form class="signup-form"
+        action="{{ site.mailing_list_action }}"
+        method="POST" target="_blank" accept-charset="UTF-8">
+
+    <input type="hidden" name="zc_trackCode" value="ZCFORMVIEW">
+    <input type="hidden" name="viewFrom" value="URL_ACTION">
+    <input type="hidden" name="submitType" value="optinCustomView">
+    <input type="hidden" name="lD" value="{{ site.zoho.ld }}">
+    <input type="hidden" name="zcld" value="{{ site.zoho.ld }}">
+    <input type="hidden" name="zctd" value="{{ site.zoho.zctd }}">
+    <input type="hidden" name="zx" value="{{ site.zoho.zx }}">
+    <input type="hidden" name="zc_formIx" value="{{ site.zoho.form_ix }}">
+    <input type="hidden" name="zcvers" value="2.0">
+    <input type="hidden" name="oldListIds" value="">
+    <input type="hidden" name="mode" value="OptinCreateView">
+
     <div class="field-row">
       <div class="field">
         <label for="ml-first">First name</label>
-        <input type="text" id="ml-first" name="first_name" autocomplete="given-name">
+        <input type="text" id="ml-first" name="FIRSTNAME" required autocomplete="given-name">
       </div>
       <div class="field">
         <label for="ml-last">Last name</label>
-        <input type="text" id="ml-last" name="last_name" autocomplete="family-name">
+        <input type="text" id="ml-last" name="LASTNAME" required autocomplete="family-name">
       </div>
     </div>
+
     <div class="field">
       <label for="ml-email">Email address</label>
-      <input type="email" id="ml-email" name="email" required autocomplete="email">
+      <input type="email" id="ml-email" name="CONTACT_EMAIL" required autocomplete="email">
     </div>
+
+    {% comment %} Honeypot: bots fill it, people never see it. {% endcomment %}
+    <div class="hp-field" aria-hidden="true">
+      <label for="ml-website">Leave this field empty</label>
+      <input type="text" id="ml-website" name="zc_website" tabindex="-1" autocomplete="off">
+    </div>
+
     <button type="submit" class="button">Join the list</button>
+
+    <p class="signup-fine">
+      A confirmation email comes first &mdash; you are not on the list until you
+      click the link in it. If it hasn&rsquo;t arrived in a few minutes, look in
+      your spam folder. Unsubscribe from the foot of any letter.
+      <a href="{{ '/privacy/' | relative_url }}">Privacy</a>.
+    </p>
   </form>
+
+  <script>
+    /* Drops honeypot submissions, and tells GTM about real ones. Selects by
+       class, not id, so a page carrying two signup blocks still behaves. */
+    (function () {
+      var forms = document.querySelectorAll('.signup-form');
+      for (var i = 0; i < forms.length; i++) {
+        forms[i].addEventListener('submit', function (e) {
+          var hp = this.querySelector('[name="zc_website"]');
+          if (hp && hp.value !== '') { e.preventDefault(); return; }
+          if (window.dataLayer) {
+            window.dataLayer.push({
+              event: 'newsletter_signup',
+              list_name: 'Blair Purvis',
+              form_location: 'blairpurvis.com'
+            });
+          }
+        });
+      }
+    })();
+  </script>
   {% else %}
-  <!-- The list isn't switched on yet. Set mailing_list_action in _config.yml
-       and the form above replaces this paragraph automatically. -->
+  {% comment %}
+    The list isn't switched on. Set mailing_list_action (and the zoho block)
+    in _config.yml and the form above replaces this paragraph automatically.
+  {% endcomment %}
   <p class="signup-fallback">
     The list isn't open yet. If you'd like to be on it when it is,
     <a href="mailto:{{ site.author.email }}?subject=Mailing%20list">send me a line</a>

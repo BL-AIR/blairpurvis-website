@@ -31,12 +31,28 @@ form_endpoint: ""
 # ---------------------------------------------------------------------------
 # MAILING LIST
 #
-# mailing_list_action: the subscribe URL from your email provider.
-#   Empty for now — the Prahran list is not switched on yet. While empty,
-#   the signup block invites people to write to you instead. Nothing breaks.
+# mailing_list_action: the subscribe URL from your email provider. Empty it
+#   and the signup block goes back to inviting people to write to you instead —
+#   nothing breaks either way.
+#
+# zoho: identifiers for the "Author list signup - website" form in Zoho
+#   Campaigns (org 7007465642, Australian data centre — the .com.au host
+#   matters, a .com URL will not find the org). The form feeds the "Blair
+#   Purvis" list and is double opt-in.
+#
+#   If that form is ever edited inside Zoho, re-check ld / zctd / form_ix
+#   before assuming they still match. Editing it can also silently switch
+#   CAPTCHA back on, which rejects every submission from a hand-built form
+#   like this one — untick it under Add Special Elements.
 # ---------------------------------------------------------------------------
 
-mailing_list_action: ""
+mailing_list_action: "https://zcmp-user.maillist-manage.com.au/weboptin.zc"
+
+zoho:
+  ld:      "1b2edca89780269"
+  zctd:    "1b2edca8977f6b9"
+  zx:      "11a1a2060d"
+  form_ix: "3zb056748e942a3c9af7c65fa1efe394553698a2d84095c61843ac01549c5149ef"
 mailing_list_promise: >-
   A few times a year: publication news, and a little of the work before it
   is finished. Your address is never sold, never traded, and never passed to

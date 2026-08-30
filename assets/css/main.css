@@ -629,6 +629,25 @@ textarea:focus-visible {
 
 .signup-fallback { margin-bottom: 0; }
 
+/* Small print under the signup button. */
+.signup-fine {
+  margin: 1rem 0 0;
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* Honeypot. Off-canvas rather than display:none — some bots skip hidden
+   fields, and screen readers skip it via aria-hidden on the wrapper. */
+.hp-field {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .field-row {
   display: flex;
   flex-wrap: wrap;
