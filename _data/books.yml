@@ -55,13 +55,13 @@
   cloth: forest
   era: 1855
   logline: Book Two of the Generations trilogy, Dawn of the Eighth Sense.
-  blurb: >-
-    TODO — Blair to write. Nothing is drawn if this stays empty.
+  # blurb: add a paragraph here when you're ready — the page simply omits it
+  #        while it's commented out.
 
 - title: The Second Heir
   cover: the-second-heir.jpg
   cloth: forest
   era: 1880
   logline: Book Three of the Generations trilogy, Dawn of the Eighth Sense.
-  blurb: >-
-    TODO — Blair to write. Nothing is drawn if this stays empty.
+  # blurb: add a paragraph here when you're ready — the page simply omits it
+  #        while it's commented out.
