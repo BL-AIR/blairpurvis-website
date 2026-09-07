@@ -40,8 +40,7 @@ why female authors write gay erotica, some of which is actually quite good.
 Tolerance for gender reversals in the above scenario, I am sure would be less
 forgiving but the paradox remains. Contemplating my own thoughts on the matter I
 concluded — if the quality of the finished product is good, who cares who penned
-the text. Why should I need to piss on my territorial post to mark my spot like a
-xenophobic dog?
+the text.
 
 The problem arises when the quality of the finished product is *not* good. When
 narrow-minded assumptions and clichés are hung around our head like millstones
