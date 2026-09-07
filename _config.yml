@@ -112,7 +112,7 @@ social:
     url: https://www.youtube.com/channel/UCL0FUyK6clBPpzYIaZLiw4Q
   - name: Substack
     icon: substack
-    url: https://substack.com/@blairpurvis
+    url: https://blairpurvis.substack.com
   - name: Email
     icon: email
     url: mailto:me@blairpurvis.com
@@ -141,6 +141,8 @@ profiles:
     url: https://www.amazon.com/Blair-Purvis/e/B07CCMMGNY
   - name: Prahran Publishing author page
     url: https://www.prahran.press/authors/blair-purvis/
+  - name: Substack
+    url: https://blairpurvis.substack.com
 
 publisher:
   name: Prahran Publishing
