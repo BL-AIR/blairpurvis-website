@@ -150,6 +150,15 @@ publisher:
 # BUILD — you shouldn't need to change anything below this line.
 # ---------------------------------------------------------------------------
 
+# Markdown output. `entity_output: numeric` makes kramdown emit curly quotes,
+# dashes and ellipses as numeric character references (&#8217;) rather than raw
+# UTF-8 characters. Browsers render them identically, but it means the Atom
+# feed is pure ASCII — which matters because Goodreads' blog importer does not
+# honour the feed's declared encoding and turns every raw curly apostrophe or
+# em dash into three replacement marks. Added 7 Sep 2026.
+kramdown:
+  entity_output: numeric
+
 permalink: /writing/:title/
 timezone: Australia/Melbourne
 
