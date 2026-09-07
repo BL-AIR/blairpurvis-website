@@ -2,23 +2,11 @@
 title: Drowning in a Deluge of Words
 date: 2018-06-24 21:21:00 +1000
 standfirst: A typing class in the early seventies, a writers’ conference forty years later, and the reason to keep going.
-published: false
+published: true
 ---
 
 <!-- ---------------------------------------------------------------------
-     HELD BACK, DELIBERATELY — but this is the good one.
-
-     The best piece of the six. Ms V with the whistle, the two boys in the
-     typing elective, the protagonist appearing at the end to ask "Where to
-     today?" — it's a real essay with a shape.
-
-     One paragraph is the problem: the passage beginning "I sit in the
-     auditorium listening to publishers lament", about being an old white
-     Anglo male at the bottom of a slush pile. Honestly felt in 2018,
-     easily excerpted without its context in 2026.
-
-     The essay survives losing it. Cut that paragraph, remove this comment
-     and the published: false line, and it's ready.
+     OK.
      --------------------------------------------------------------------- -->
 
 I'm old.
@@ -109,14 +97,7 @@ through pathetic prose and mindless drivel.
 
 I sit in the auditorium listening to publishers lament the few hours in the day they
 have to read countless mounds of manuscripts — how we should not darken their
-doorsteps unless invited to do so. And I feel for them, I really do. I sit listening
-to the need to hear from minority-based authors while being vilified for being an old
-white Anglo male whose contribution is no longer favoured. I understand that my words
-within the authoring clan are relegated to the bottom of a slush pile purely for being
-a member of a demographic. I acknowledge that I must succeed to diverse voices with
-more pressing tales. There is merit in the claim for sure but what then of my voice?
-What is to become of the tales I wish to tell? Am I to be silenced? To be forgotten
-assumes one was once known, but by all accounts, such a privilege seemed remote.
+doorsteps unless invited to do so. And I feel for them, I really do.
 
 With little likelihood of publication, I set my sights on the self-publishing path but
 with 48.5 Million books in Amazon's catalogue alone, the prospect of finding readers is

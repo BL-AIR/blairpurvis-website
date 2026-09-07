@@ -2,28 +2,11 @@
 title: A Licence to Write
 date: 2018-06-06 21:25:00 +1000
 standfirst: On writing outside your own experience, and how to do it with some care.
-published: false
+published: true
 ---
 
 <!-- ---------------------------------------------------------------------
-     HELD BACK, DELIBERATELY.
-
-     published: false keeps this off the site. It builds, it just doesn't
-     appear anywhere — not in the list, not in the feed, not in the sitemap.
-
-     Why: you said you didn't want ill-considered old posts coming back to
-     haunt you, and this is one of the two with 2018 in its bones. The
-     argument is sound; some of the register ("xenophobic dogs", the
-     territorial-marking line) is warmer than you'd write it now, and it
-     is the kind of paragraph that travels without its context.
-
-     Three options, all easy:
-       1. Leave it held back. Costs nothing.
-       2. Delete this file. Gone.
-       3. Edit the passages you'd soften, delete this comment and the
-          published: false line above, push. Live.
-
-     The original text is below, unaltered.
+     OK.
      --------------------------------------------------------------------- -->
 
 In the heady era of political correctness, we are often left wondering 'should I
