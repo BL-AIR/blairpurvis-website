@@ -9,11 +9,27 @@
 #       Delete any you don't have yet rather than leaving a dead link.
 #
 # cover: put the image in assets/img/ and give the filename here.
+#
+# slug:  the book's own address — /books/<slug>/. Each book has a real page
+#        now, which is what a search engine wants to rank for a title. Change
+#        a slug only before anyone has linked to it; after that you're moving
+#        a door people already know how to find. The matching stub file lives
+#        in books/ and its permalink has to agree with this.
+#
+# series: prints nowhere yet, but tells search engines that the three
+#        Generations novels are one work in three parts.
+#
+# isbn:  add it the moment you have it. It is the single strongest signal
+#        that a page is about a specific book and not a phrase — which
+#        matters here, because at least four other books are called
+#        The Art of Surrender.
 # ---------------------------------------------------------------------------
 
 - title: The Art of Surrender
+  slug: the-art-of-surrender
   status: forthcoming
   published: 2026-10-15
+  # isbn: "978-..."   # add it as soon as Prahran assigns one
   cover: art-of-surrender.jpg
   cloth: burgundy   # binding colour used until there's a cover: burgundy, forest, indigo, tan
   places: [Morocco, Gibraltar, Switzerland, Berlin, Sydney]
@@ -60,6 +76,8 @@
     #   url:
 
 - title: Born from Mauritanian Sands
+  slug: born-from-mauritanian-sands
+  series: Dawn of the Eighth Sense
   cover: born-from-mauritanian-sands.jpg
   cloth: forest
   era: 1835
@@ -72,6 +90,8 @@
     #   url:
 
 - title: Gypsy in the Shah's Harem
+  slug: gypsy-in-the-shahs-harem
+  series: Dawn of the Eighth Sense
   cover: gypsy-in-the-shahs-harem.jpg
   cloth: forest
   era: 1855
@@ -80,6 +100,8 @@
   #        while it's commented out.
 
 - title: The Second Heir
+  slug: the-second-heir
+  series: Dawn of the Eighth Sense
   cover: the-second-heir.jpg
   cloth: forest
   era: 1880

@@ -21,7 +21,8 @@ permalink: /
       {% if links.size > 0 %}
       <a class="button" href="{{ links[0].url }}">Pre-order</a>
       {% endif %}
-      <a class="button-ghost" href="{{ '/books/' | relative_url }}">Read more</a>
+      {%- assign lead_url = lead.slug | default: lead.title | slugify | prepend: '/books/' | append: '/' -%}
+      <a class="button-ghost" href="{{ lead_url | relative_url }}">Read more</a>
     </div>
 
     {% if lead.places %}
@@ -54,7 +55,8 @@ permalink: /
       <p class="book-status">{{ book.published | date: "%Y" }}</p>
       {% endif %}
 
-      <h3 class="book-title"><a href="{{ '/books/' | relative_url }}">{{ book.title }}</a></h3>
+      {%- assign book_url = book.slug | default: book.title | slugify | prepend: '/books/' | append: '/' -%}
+      <h3 class="book-title"><a href="{{ book_url | relative_url }}">{{ book.title }}</a></h3>
       {% if book.logline %}<p class="book-logline">{{ book.logline }}</p>{% endif %}
     </li>
     {% endfor %}

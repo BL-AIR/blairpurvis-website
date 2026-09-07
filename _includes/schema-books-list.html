@@ -1,0 +1,28 @@
+{% comment %}
+  Structured data: the shelf.
+
+  /books/ is a list of books, not a book. Describing it as an ItemList that
+  points at the individual pages tells a search engine which URL is canonical
+  for each title — and stops /books/ competing with the book pages for the
+  same query, which is the usual way an author site ends up ranking for
+  nothing in particular.
+
+  Rebuilds itself from _data/books.yml.
+{% endcomment %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Books by Blair Purvis",
+  "itemListOrder": "https://schema.org/ItemListOrderDescending",
+  "numberOfItems": {{ site.data.books.size }},
+  "itemListElement": [{% for book in site.data.books %}
+    {
+      "@type": "ListItem",
+      "position": {{ forloop.index }},
+      "url": {{ book.slug | default: book.title | slugify | prepend: '/books/' | append: '/' | absolute_url | jsonify }},
+      "name": {{ book.title | jsonify }}
+    }{% unless forloop.last %},{% endunless %}{% endfor %}
+  ]
+}
+</script>

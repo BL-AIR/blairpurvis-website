@@ -1,0 +1,85 @@
+---
+layout: default
+---
+{% comment %}
+  One book, one page, one URL.
+
+  The page itself is a four-line stub in books/ — a title, a description and
+  the book's name. Everything you actually read below is pulled out of
+  _data/books.yml, so that file stays the only place you edit a book.
+
+  Why these pages exist: until now the four titles lived as sections of
+  /books/, which gave a search engine one page trying to rank for four
+  different books. A title search wants a page that is about that title and
+  nothing else.
+{% endcomment %}
+{%- assign book = site.data.books | where: "title", page.book | first -%}
+
+{% if book %}
+<article class="sheet">
+  <header class="sheet-head">
+    {% if book.status == 'forthcoming' %}
+    <p class="book-status">Forthcoming &middot; {{ book.published | date: "%-d %B %Y" }}</p>
+    {% elsif book.published %}
+    <p class="book-status">{{ book.published | date: "%Y" }}</p>
+    {% elsif book.era %}
+    <p class="book-status">{{ book.era }}</p>
+    {% endif %}
+
+    <h1>{{ book.title }}</h1>
+    {% if book.logline %}<p class="standfirst">{{ book.logline }}</p>{% endif %}
+  </header>
+
+  <div class="prose">
+
+    <div style="max-width:14rem;margin:0 0 2.2rem">
+      {% include cover.html book=book %}
+    </div>
+
+    {% if book.places %}
+    <ul class="itinerary" style="margin-top:0;border-top:0;padding-top:0">
+      {% for place in book.places %}<li>{{ place }}</li>{% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if book.blurb %}{{ book.blurb | markdownify }}{% endif %}
+
+    {% assign links = book.buy | where_exp: "b", "b.url" %}
+    {% if links.size > 0 %}
+    <h2>Where to buy</h2>
+    <ul class="buy">
+      {% for b in links %}
+      <li><a href="{{ b.url }}">{{ b.name }}</a></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+
+    <p class="colophon-quiet">
+      {% if book.series %}Book of the <em>{{ book.series }}</em> series. {% endif %}
+      Published by <a href="{{ site.publisher.url }}">{{ site.publisher.name }}</a>, Melbourne.
+    </p>
+
+    <p><a href="{{ '/books/' | relative_url }}">&larr; All books</a></p>
+
+  </div>
+
+  {% include mailing-list.html %}
+</article>
+
+{% include schema-book.html book=book %}
+{% else %}
+<article class="sheet">
+  <header class="sheet-head">
+    <h1>{{ page.title }}</h1>
+  </header>
+  <div class="prose">
+    <p>
+      This page expects a book called “{{ page.book }}” in
+      <code>_data/books.yml</code>, and can't find one. Check that the
+      <code>book:</code> line in this page's front matter matches the
+      <code>title:</code> in that file exactly.
+    </p>
+    <p><a href="{{ '/books/' | relative_url }}">&larr; All books</a></p>
+  </div>
+</article>
+{% endif %}

@@ -9,7 +9,7 @@
       {% endcomment %}
       <span class="wordmark-mark" aria-hidden="true"></span>
       <span class="wordmark-name">Blair Purvis</span>
-      <span class="wordmark-role">{{ site.tagline }}</span>
+      <span class="wordmark-role">{{ site.role | default: site.tagline }}</span>
     </a>
 
     <nav class="nav" aria-label="Main">

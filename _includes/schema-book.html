@@ -1,0 +1,60 @@
+{% comment %}
+  Structured data: one book.
+
+  Emitted on each book's own page and nowhere else — a book should be
+  described once, at the URL that is about it. /books/ carries a list instead.
+
+  Everything is read from _data/books.yml. Add `isbn:` or fill in the `buy:`
+  URLs there and the corresponding lines appear here automatically; leave them
+  out and the lines are omitted rather than left empty, which is what a
+  validator wants to see.
+
+  `author` is a reference to the Person declared in schema-person.html rather
+  than a repeat of the name, so four books read as one author's work.
+{% endcomment %}
+{%- assign b = include.book -%}
+{%- assign page_url = page.url | absolute_url -%}
+{%- assign links = b.buy | where_exp: "x", "x.url" -%}
+{%- if b.blurb -%}
+  {%- assign desc = b.blurb | markdownify | strip_html | normalize_whitespace | strip -%}
+{%- else -%}
+  {%- assign desc = b.logline -%}
+{%- endif -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "@id": {{ page_url | append: "#book" | jsonify }},
+  "url": {{ page_url | jsonify }},
+  "name": {{ b.title | jsonify }},
+  "inLanguage": "en",
+  "author": { "@id": {{ "/#blair-purvis" | absolute_url | jsonify }} },
+  "publisher": {
+    "@type": "Organization",
+    "name": {{ site.publisher.name | jsonify }},
+    "url": {{ site.publisher.url | jsonify }}
+  }{% if desc %},
+  "description": {{ desc | jsonify }}{% endif %}{% if b.cover %},
+  "image": {{ '/assets/img/' | append: b.cover | absolute_url | jsonify }}{% endif %}{% if b.published %},
+  "datePublished": {{ b.published | date: "%Y-%m-%d" | jsonify }}{% endif %}{% if b.isbn %},
+  "isbn": {{ b.isbn | jsonify }},
+  "workExample": {
+    "@type": "Book",
+    "@id": {{ page_url | append: "#paperback" | jsonify }},
+    "bookFormat": "https://schema.org/Paperback",
+    "inLanguage": "en",
+    "isbn": {{ b.isbn | jsonify }}
+  }{% endif %}{% if b.series %},
+  "isPartOf": {
+    "@type": "BookSeries",
+    "name": {{ b.series | jsonify }}
+  }{% endif %}{% if links.size > 0 %},
+  "offers": [{% for l in links %}
+    {
+      "@type": "Offer",
+      "url": {{ l.url | jsonify }},
+      "availability": {% if b.status == 'forthcoming' %}"https://schema.org/PreOrder"{% else %}"https://schema.org/InStock"{% endif %}
+    }{% unless forloop.last %},{% endunless %}{% endfor %}
+  ]{% endif %}
+}
+</script>

@@ -1,0 +1,43 @@
+{% comment %}
+  Structured data: who Blair Purvis is.
+
+  jekyll-seo-tag already describes each *page*. This describes the *person*,
+  and does the one job the plugin can't: `sameAs`. Every profile listed in
+  `social:` and `profiles:` in _config.yml is declared here as the same human
+  being, which is how blairpurvis.com becomes the answer to "Blair Purvis"
+  rather than one candidate among a physiotherapist and a parked domain.
+
+  The @id is a stable anchor. Book pages point their `author` at it instead of
+  repeating the name, so a search engine reads four books by one author rather
+  than four books by four authors who happen to share a name.
+
+  Nothing here needs editing. It rebuilds itself from _config.yml.
+{% endcomment %}
+{%- assign profiles = "" | split: "" -%}
+{%- for s in site.social -%}
+  {%- assign scheme = s.url | slice: 0, 7 -%}
+  {%- if s.url and scheme != "mailto:" -%}{%- assign profiles = profiles | push: s.url -%}{%- endif -%}
+{%- endfor -%}
+{%- for p in site.profiles -%}
+  {%- if p.url -%}{%- assign profiles = profiles | push: p.url -%}{%- endif -%}
+{%- endfor -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": {{ "/#blair-purvis" | absolute_url | jsonify }},
+  "name": {{ site.author.name | jsonify }},
+  "url": {{ "/" | absolute_url | jsonify }},
+  "jobTitle": {{ site.role | default: "Novelist" | jsonify }},
+  "description": {{ site.description | normalize_whitespace | jsonify }},
+  "email": {{ site.author.email | prepend: "mailto:" | jsonify }},
+  "nationality": { "@type": "Country", "name": "Australia" },
+  "homeLocation": { "@type": "Place", "name": "Melbourne, Australia" },
+  "worksFor": {
+    "@type": "Organization",
+    "name": {{ site.publisher.name | jsonify }},
+    "url": {{ site.publisher.url | jsonify }}
+  }{% if profiles.size > 0 %},
+  "sameAs": {{ profiles | jsonify }}{% endif %}
+}
+</script>
