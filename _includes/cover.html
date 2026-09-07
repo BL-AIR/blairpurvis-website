@@ -11,17 +11,27 @@
 
   Set `era:` to print a year beneath the cover — the year carried on that
   book's spine. Omit it and nothing is drawn.
+
+  Pass `href=` to make the cover itself a link to the book:
+
+      {% include cover.html book=b href=url %}
+
+  Only the picture becomes clickable — the year beneath it stays plain text,
+  so it doesn't pick up link colour and an underline. A cover with no href
+  renders exactly as it always did, which is what the book's own page wants:
+  a cover that links to the page you are already on is a small cruelty.
 {% endcomment %}
 
 {% assign b = include.book %}
+{% assign href = include.href %}
 
-{% if b.cover %}
+{% if href %}<a class="cover-link" href="{{ href | relative_url }}" aria-label="{{ b.title }}">{% endif %}
+{%- if b.cover -%}
   <img class="cover-image"
        src="{{ '/assets/img/' | append: b.cover | relative_url }}"
        alt="Cover of {{ b.title }}"
        loading="lazy">
-  {% if b.era %}<p class="cover-era">{{ b.era }}</p>{% endif %}
-{% else %}
+{%- else -%}
   <div class="plate plate-{{ b.cloth | default: 'burgundy' }}" role="img"
        aria-label="{{ b.title }} by Blair Purvis">
     <div class="plate-inner">
@@ -31,5 +41,6 @@
       <span class="plate-author">Blair Purvis</span>
     </div>
   </div>
-  {% if b.era %}<p class="cover-era">{{ b.era }}</p>{% endif %}
-{% endif %}
+{%- endif -%}
+{% if href %}</a>{% endif %}
+{% if b.era %}<p class="cover-era">{{ b.era }}</p>{% endif %}

@@ -33,7 +33,7 @@ permalink: /
   </div>
 
   <div class="hero-book rise rise-3">
-    {% include cover.html book=lead %}
+    {% include cover.html book=lead href=lead_url %}
   </div>
 </section>
 
@@ -47,7 +47,8 @@ permalink: /
   <ul class="shelf">
     {% for book in rest %}
     <li>
-      {% include cover.html book=book %}
+      {%- assign book_url = book.slug | default: book.title | slugify | prepend: '/books/' | append: '/' -%}
+      {% include cover.html book=book href=book_url %}
 
       {% if book.role %}
       <p class="book-status">{{ book.role }}{% if book.published %} &middot; {{ book.published | date: "%Y" }}{% endif %}</p>
@@ -55,7 +56,6 @@ permalink: /
       <p class="book-status">{{ book.published | date: "%Y" }}</p>
       {% endif %}
 
-      {%- assign book_url = book.slug | default: book.title | slugify | prepend: '/books/' | append: '/' -%}
       <h3 class="book-title"><a href="{{ book_url | relative_url }}">{{ book.title }}</a></h3>
       {% if book.logline %}<p class="book-logline">{{ book.logline }}</p>{% endif %}
     </li>

@@ -499,6 +499,39 @@ textarea:focus-visible {
   color: var(--gilt);
 }
 
+/* A cover that links to its book. Resets the link styling so the picture is
+   the affordance, not an underline; the focus ring is inherited from `a`. */
+.cover-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.cover-link .cover-image,
+.cover-link .plate {
+  transition: opacity .25s ease;
+}
+
+.cover-link:hover .cover-image,
+.cover-link:hover .plate { opacity: .88; }
+
+@media (prefers-reduced-motion: reduce) {
+  .cover-link .cover-image,
+  .cover-link .plate { transition: none; }
+}
+
+/* Production status under a cover — "In Development" and the like. Same
+   placement as .cover-era, but gilt, because it is news rather than a date. */
+.cover-status {
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gilt);
+  text-align: center;
+  margin: 0.5rem 0 0;
+}
+
 .cover-era {
   font-family: var(--sans);
   font-size: 0.62rem;

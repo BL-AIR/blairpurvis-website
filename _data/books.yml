@@ -19,6 +19,11 @@
 # series: prints nowhere yet, but tells search engines that the three
 #        Generations novels are one work in three parts.
 #
+# development: prints under the cover on that book's own page (and nowhere
+#        else) in gilt small caps — "In Development". It is free text, so
+#        "Drafting", "With the editor" or "Coming 2028" all work. Delete the
+#        line when the book is finished and the line disappears with it.
+#
 # isbn:  add it the moment you have it. It is the single strongest signal
 #        that a page is about a specific book and not a phrase — which
 #        matters here, because at least four other books are called
@@ -92,6 +97,7 @@
 - title: Gypsy in the Shah's Harem
   slug: gypsy-in-the-shahs-harem
   series: Dawn of the Eighth Sense
+  development: In Development
   cover: gypsy-in-the-shahs-harem.jpg
   cloth: forest
   era: 1855
@@ -102,6 +108,7 @@
 - title: The Second Heir
   slug: the-second-heir
   series: Dawn of the Eighth Sense
+  development: In Development
   cover: the-second-heir.jpg
   cloth: forest
   era: 1880

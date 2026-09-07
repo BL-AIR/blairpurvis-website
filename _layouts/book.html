@@ -18,12 +18,14 @@ layout: default
 {% if book %}
 <article class="sheet">
   <header class="sheet-head">
+    {% comment %}
+      No era line here: the cover prints the year beneath itself, and saying
+      1855 twice on one page is just noise.
+    {% endcomment %}
     {% if book.status == 'forthcoming' %}
     <p class="book-status">Forthcoming &middot; {{ book.published | date: "%-d %B %Y" }}</p>
     {% elsif book.published %}
     <p class="book-status">{{ book.published | date: "%Y" }}</p>
-    {% elsif book.era %}
-    <p class="book-status">{{ book.era }}</p>
     {% endif %}
 
     <h1>{{ book.title }}</h1>
@@ -34,6 +36,11 @@ layout: default
 
     <div style="max-width:14rem;margin:0 0 2.2rem">
       {% include cover.html book=book %}
+      {% comment %}
+        `development:` in _data/books.yml prints here and only here — under the
+        cover on the book's own page, not on the home page or the shelf.
+      {% endcomment %}
+      {% if book.development %}<p class="cover-status">{{ book.development }}</p>{% endif %}
     </div>
 
     {% if book.places %}
