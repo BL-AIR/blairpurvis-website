@@ -10,8 +10,11 @@
   <link rel="preload" href="{{ '/assets/fonts/karla-latin-500-normal.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 
-  <!-- Favicons. The SVG carries both colourways and switches on the viewer's
-       theme; the PNGs are the fallback for browsers that ignore SVG icons. -->
+  <!-- Favicons. One fixed colourway: black on the site's cream. A
+       prefers-color-scheme swap follows the browser's theme, not the surface
+       the icon is painted on, which is how the pale mark ended up washed out
+       on Chrome's light shortcut tile. The PNGs are the fallback for browsers
+       that ignore SVG icons. -->
   <link rel="icon" href="{{ '/assets/img/favicon.svg' | relative_url }}" type="image/svg+xml">
   <link rel="icon" href="{{ '/assets/img/favicon-32.png' | relative_url }}" sizes="32x32" type="image/png">
   <link rel="icon" href="{{ '/assets/img/favicon-16.png' | relative_url }}" sizes="16x16" type="image/png">

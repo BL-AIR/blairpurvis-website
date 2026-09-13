@@ -238,17 +238,17 @@ textarea:focus-visible {
   flex-wrap: wrap;
 }
 
-/* The typewriter mark. The file is an alpha mask, not a picture — the colour
-   comes from background-color, so one asset serves both themes and matches
-   'Surrender' in the hero exactly. */
+/* The typewriter mark. The file is ink-on-transparency vector used as an alpha
+   mask, not a picture — the colour comes from background-color, so one asset
+   serves both themes and matches 'Surrender' in the hero exactly. */
 .wordmark-mark {
   flex: 0 0 auto;
   align-self: center;
   width: 4.2rem;
   height: 4.2rem;
   background-color: var(--title-surr);
-  -webkit-mask-image: url("/assets/img/bp-logo-mask.png");
-          mask-image: url("/assets/img/bp-logo-mask.png");
+  -webkit-mask-image: url("/assets/img/bp-logo-mask.svg");
+          mask-image: url("/assets/img/bp-logo-mask.svg");
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
   -webkit-mask-position: center;
