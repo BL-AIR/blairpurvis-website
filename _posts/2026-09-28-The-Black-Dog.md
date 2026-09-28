@@ -1,6 +1,6 @@
 # The Black Dog
 
-#Website/Posts
+
 The hound that sits upon my back, weighing me down and immobilising initiative, is something I have lived with for many years. What I am actually talking about, euphemisms aside, is often called ‘high-functioning depression’ *(although sometimes I doubt the functioning part)*. As many can attest who also relate to this mental health state, it just comes and washes over you. “Cheer up!” is often the last thing you want to hear, because it assumes that it is just a mood that you can control or snap out of, or that it is a result of ‘something’, and that if you fix that ‘something’, everything will be better again. It doesn’t.
 That is not to say that when the black dog pounces and pins you down *(sorry, euphemisms again)*, genuine issues become matters that do make you sad. And well may you ask: did the depression make the issue something to become sad about, or did the issue bring about genuine sadness, with depression descending as a result? Chicken or egg – you decide. I’m too unmotivated to get out of bed, much less worry about causes and effects.
 How people deal with this varies. Some turn to medication *(prescribed or otherwise)*, and friends who have, swear by it. Others just let it win and hope that the fog will lift tomorrow. And then there are others – like me – who choose escape: a retreat to a happy place where they can build worlds, create stories, build characters, and then write it all down. So yes, writing for me is as much therapy as it is work.
