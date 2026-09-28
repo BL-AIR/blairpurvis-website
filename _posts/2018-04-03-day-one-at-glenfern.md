@@ -1,7 +1,7 @@
 ---
 title: "Day One at Glenfern, Studio 2"
 date: 2018-04-03 01:55:00 +1100
-standfirst: The first day of three months’ leave, a shared writers’ studio, and a cafe owner from Yazd.
+standfirst: The first day of three months&#8217; leave, a shared writers&#8217; studio, and a cafe owner from Yazd.
 ---
 My writing began in October of 2016. Of course, I have been writing long before that but not of any serious nature. It was on my birthday in that year that I decided to start a book called *Generations*. Well, in the first six months, the words just fell out of me and I amassed a decent amount of words on the page &#8212; 100K or more. Looking back on those early days, the words I wrote boarded on the putrid and I am thankful that I didn't rush out and release those early drafts. The book I had in mind was a sweeping saga, spanning many generations to tell a tale that unfolded with each subsequent generation. It quickly became apparent that it was not one book but several and I decided to turn one book into three. One book for each century: 19th, 20th & 21st &#8212; each containing three generations.
 

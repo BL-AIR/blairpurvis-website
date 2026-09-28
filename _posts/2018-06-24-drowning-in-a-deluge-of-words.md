@@ -1,7 +1,7 @@
 ---
 title: Drowning in a Deluge of Words
 date: 2018-06-24 21:21:00 +1000
-standfirst: A typing class in the early seventies, a writers’ conference forty years later, and the reason to keep going.
+standfirst: A typing class in the early seventies, a writers&#8217; conference forty years later, and the reason to keep going.
 published: true
 ---
 <!-- ---------------------------------------------------------------------
