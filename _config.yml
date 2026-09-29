@@ -110,6 +110,11 @@ social:
   - name: YouTube
     icon: youtube
     url: https://www.youtube.com/channel/UCL0FUyK6clBPpzYIaZLiw4Q
+  # Points at the Art of Surrender board on the Prahran Publishing account
+  # for now; swap to the Blair Purvis — Novelist board once it has content.
+  - name: Pinterest
+    icon: pinterest
+    url: https://au.pinterest.com/PrahranPress/the-art-of-surrender/
   - name: Substack
     icon: substack
     url: https://blairpurvis.substack.com

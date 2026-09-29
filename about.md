@@ -19,7 +19,7 @@ image: /assets/img/blair-purvis-headshot-138.jpg
   <img src="{{ '/assets/img/blair-purvis-headshot-138.jpg' | relative_url }}"
        alt="Blair Purvis, a man in his sixties with short grey hair, wearing a tan jacket with a brown corduroy collar, looking at the camera with a wry half-smile."
        width="1000" height="1250">
-  <figcaption>Photograph by <a href="https://headshotphotographer.com.au">Julian Dolman</a></figcaption>
+  <figcaption>Photograph by <a href="https://headshotphotographer.com.au/">Julian Dolman</a></figcaption>
 </figure>
 
 His work is concerned with desire, geography, and the slow, difficult business
