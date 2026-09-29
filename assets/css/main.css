@@ -399,6 +399,39 @@ textarea:focus-visible {
 
 .prose figure { margin: 2.5em 0; }
 
+.prose figure.portrait {
+  max-width: 28rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: 0.35rem;
+}
+
+/* Photo credit runs up the right-hand edge, reading top to bottom, with the
+   baseline facing the photo. Sits at the foot of the image. */
+.prose figure.portrait figcaption {
+  writing-mode: vertical-rl;
+  align-self: end;
+  margin: 0;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+.prose figure.portrait figcaption a { color: inherit; }
+
+/* Soft square vignette: the photo's edges fade into the page over the
+   outer ~4%, instead of stopping at a hard line. Two gradient masks
+   (horizontal and vertical) intersected give the rectangular fade. */
+.prose figure.portrait img {
+  --fade: 4%;
+  -webkit-mask-image:
+    linear-gradient(to right, transparent, #000 var(--fade), #000 calc(100% - var(--fade)), transparent),
+    linear-gradient(to bottom, transparent, #000 var(--fade), #000 calc(100% - var(--fade)), transparent);
+  -webkit-mask-composite: source-in;
+          mask-image:
+    linear-gradient(to right, transparent, #000 var(--fade), #000 calc(100% - var(--fade)), transparent),
+    linear-gradient(to bottom, transparent, #000 var(--fade), #000 calc(100% - var(--fade)), transparent);
+          mask-composite: intersect;
+}
+
 .prose figcaption {
   font-family: var(--sans);
   font-size: 0.78rem;

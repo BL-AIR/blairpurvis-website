@@ -4,23 +4,23 @@ permalink: /about/
 standfirst: >-
   Blair Purvis is a novelist living in Melbourne.
 description: About Blair Purvis, novelist, Melbourne.
+image: /assets/img/blair-purvis-headshot-138.jpg
 ---
 
 <!-- ---------------------------------------------------------------------
      This is the long bio. The short one lives on the home page, in
      index.html. The press kit quotes both — keep them consistent.
 
-     To add your portrait: put the file in assets/img/ and uncomment the
-     block below, changing the filename. Write real alt text.
+     Portrait: assets/img/blair-purvis-headshot-138.jpg (Julian Dolman).
+     To swap it, drop a new file in assets/img/ and change the src below.
      --------------------------------------------------------------------- -->
 
-<!--
-<figure>
-  <img src="{{ '/assets/img/blair-purvis.jpg' | relative_url }}"
-       alt="Blair Purvis, photographed against a window.">
-  <figcaption>Photograph by —</figcaption>
+<figure class="portrait">
+  <img src="{{ '/assets/img/blair-purvis-headshot-138.jpg' | relative_url }}"
+       alt="Blair Purvis, a man in his sixties with short grey hair, wearing a tan jacket with a brown corduroy collar, looking at the camera with a wry half-smile."
+       width="1000" height="1250">
+  <figcaption>Photograph by <a href="https://headshotphotographer.com.au">Julian Dolman</a></figcaption>
 </figure>
--->
 
 His work is concerned with desire, geography, and the slow, difficult business
 of being known — with the distance between the private and public versions of a
