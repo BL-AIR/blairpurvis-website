@@ -1,5 +1,5 @@
 ---
-title: Cat o'Clock
+title: Cat o Clock
 date: 2026-10-05 09:00:00 +1100
 standfirst: From cat&#8217;s claw to Scrivener scrivenings.
 published: true
