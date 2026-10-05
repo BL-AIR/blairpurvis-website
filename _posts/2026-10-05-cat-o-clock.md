@@ -7,7 +7,7 @@ published: true
 
 In writing class we often review various authors and their writing habits. Morning writers, evening writers, writers under the influence... It seems to fascinate others, what the creative process involves.
 
-It should be said that writing undergoes various stages. Planning, Draft 1, Draft 2, Draft 3, Final Draft: all involve different routines and demand varying tolls of the writer. And each writer, in turn, has different ways of tackling each one.
+It should be said that writing undergoes various stages. Planning, Draft 1, Draft 2, Draft 3, Final Draft: all involve different routines and exact varying tolls of the writer. And each writer, in turn, has different ways of tackling each one.
 
 Planning *(yes, I am a plotter, not a pantser)* is the one place where freeform thought and imagination can run amok, unhindered by boundaries. What usually emerges from that murky world of unencumbered imagination has a loose structure and story arc. Then begins my favourite part: Draft 1. This is where the bones of the story gain meat and flesh. It's where the blood starts coursing through the veins. It's messy, it's wild, and very, very raw. Draft 1 is where I really form a bond with my characters as the intricate details come to the fore.
 
