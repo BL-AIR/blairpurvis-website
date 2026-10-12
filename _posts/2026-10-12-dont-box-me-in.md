@@ -37,13 +37,13 @@ No respect.
 
 I'm sure he lumped me into the Boomer box _(unfairly)_, waved his fist mockingly and yelled _'Get off my exclamation mark'_ while aiming a rifle.
 
-In a way, I lament the demise of the adverb _(thank you, Stephen King)_. It has often been regarded as a sign of poor writing. 'Better to use a stronger verb than to prop up a weak one with an adverb' is the common belief among the literati. True, to a point. Sometimes using an obscure verb draws attention to the text rather than the story _(e.g. 'He pontificated' versus 'He said piously')_. And replacing _'really'_ with _'real'_ just makes me feel bilious. I am not an adverb advocate, but we have long been subject to the whims of gatekeepers who run tools like ProWritingAid that grade our work based on the number of _'...ly'_ words used, so much so that we have started lopping off the _'ly'_ at the end irrespective of the consequences.
+In a way, I lament the demise of the adverb _(thank you, Stephen King)_. It has often been regarded as a sign of poor writing. _'Better to use a stronger verb than to prop up a weak one with an adverb'_ is the common belief among the literati. True, to a point. Sometimes using an obscure verb draws attention to the text rather than the story _(e.g. 'He pontificated'_ versus _'He said piously')_. And replacing _'really'_ with _'real'_ just makes me feel bilious. I am not an adverb advocate, but we have long been subject to the whims of gatekeepers who run tools like ProWritingAid that grade our work based on the number of _'...ly'_ words used, so much so that we have started lopping off the _'ly'_ irrespective of the consequences.
 
 Another abuse, one I confess to being guilty of many a time, is the Verb Violator, turning nouns into verbs: _'I'm tramming in'_, _'Are we gymming?'_ If only there were Verbal Rehab Centres to wean us off these vocal faux pas.
 
 The saying _'rules are meant to be broken'_ is true, but only if you know which rule you are breaking and why you are breaking it; otherwise we risk linguistic devolution, and fairly soon we will all be speaking emoji.
 
-In an effort to stave off the putrefaction of the lexicon, watch these online _Knights of the English Language_:
+In an effort to stave off the putrefaction of the lexicon, I implore thee, watch these online _Knights of the English Language_:
 
 [Rob Words](https://www.youtube.com/@RobWords)
 
