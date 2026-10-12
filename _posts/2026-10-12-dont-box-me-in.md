@@ -1,21 +1,21 @@
 ---
 title: Don't Box Me In
 date: 2026-10-12 09:00:00 +1100
-standfirst: Picking up from last week's theme – we love boxes just as much as cats do.
+standfirst: Picking up from last week's theme &#8211; we love boxes just as much as cats do.
 published: true
 ---
 
-We love defining people and slotting them into preconceived definitions – almost like matching odd-shaped blocks to similarly shaped holes.
+We love defining people and slotting them into preconceived definitions &#8211; almost like matching odd-shaped blocks to similarly shaped holes.
 
-We do it to race, religion, sexuality and, thanks to this moronically defined generational tagging, age: What's a Boomer? Why does Gen X behave so aloofly? Gen Y or Millennials – why the name change? And who changed it?
+We do it to race, religion, sexuality and, thanks to this moronically defined generational tagging, age: What's a Boomer? Why does Gen X behave so aloofly? Gen Y or Millennials &#8211; why the name change? And who changed it?
 
 If, indeed, it is a study in sociology, why do all the attributes keep shifting? It used to coincide with major zeitgeist-altering events. The end of World War II kicked off the Boomers. The JFK assassination _(Nov 1963)_ gave rise to Gen X. 1980s capitalism birthed Millennials, and so forth. But the years drift, for no apparent reason and by no elected authority. I do, however, concede that these boxes have shape and hard edges. They come loaded with preconceived definitions, and it is an affinity with these definitions that would do more to describe a person than whether you were born straddling the generational divide _(e.g. 31 Dec 19xx or 1 Jan 19xx+1)_.
 
 I always have, and always will, place myself firmly in the Gen X camp, no matter the shifting boundary line. My children sit right in the middle of Gen Z with no looming boundary to challenge their place in the world. It is the differences between the generations that seem to fascinate so many.
 
-One such difference is language and its use – or, in my opinion, misuse.
+One such difference is language and its use &#8211; or, in my opinion, misuse.
 
-Now, conversations in our household on the topic are robust, to say the _most_ – not arguments as such, just positions worth defending. With a student of linguistics, a lyricist, an editor and a novelist, the four of us do not come up short where words are concerned.
+Now, conversations in our household on the topic are robust, to say the _most_ &#8211; not arguments as such, just positions worth defending. With a student of linguistics, a lyricist, an editor and a novelist, the four of us do not come up short where words are concerned.
 
 One such divide is the role of grammar, not only in written form but in speech as well.
 
@@ -27,7 +27,7 @@ My son, the linguistics student, believes language is fluid: do with it what you
 
 To me, this is linguistic blasphemy.
 
-More scholarly academics and the guardians of words – aka the Oxford English Dictionary – have laid down the guidelines, the definitions and the correct way in which we should use the language. Deviation from these rules simply proves one's ignorance. I do not claim to be an oracle of grammatical proficiency, but I value correct usage. I am not a paid-up member of _'The Society for the Preservation of the Apostrophe'_, but I appreciate their existence nonetheless.
+More scholarly academics and the guardians of words &#8211; aka the Oxford English Dictionary &#8211; have laid down the guidelines, the definitions and the correct way in which we should use the language. Deviation from these rules simply proves one's ignorance. I do not claim to be an oracle of grammatical proficiency, but I value correct usage. I am not a paid-up member of _'The Society for the Preservation of the Apostrophe'_, but I appreciate their existence nonetheless.
 
 I remember a YouTube video where someone said, _'Let me do something real quick.'_ I replied in the comments, _'You cannot do that real quick, but you can do it really quickly._ **DON'T USE ADJECTIVES IN PLACE OF ADVERBS**.'
 
