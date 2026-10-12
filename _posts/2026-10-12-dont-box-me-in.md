@@ -27,9 +27,9 @@ My son, the linguistics student, believes language is fluid: do with it what you
 
 To me, this is linguistic blasphemy.
 
-More scholarly academics and the guardians of words – aka the Oxford English Dictionary – have laid down the guidelines, the definitions and the correct way in which we should use the language. Deviation from these rules simply proves one's ignorance. I do not claim to be an oracle of grammatical proficiency, but I value correct usage. I am not a paid-up member of 'The Society for the Preservation of the Apostrophe', but I appreciate their existence nonetheless.
+More scholarly academics and the guardians of words – aka the Oxford English Dictionary – have laid down the guidelines, the definitions and the correct way in which we should use the language. Deviation from these rules simply proves one's ignorance. I do not claim to be an oracle of grammatical proficiency, but I value correct usage. I am not a paid-up member of _'The Society for the Preservation of the Apostrophe'_, but I appreciate their existence nonetheless.
 
-I remember a YouTube video where someone said, 'Let me do something real quick.' I replied in the comments, 'You cannot do that real quick, but you can do it really quickly. DON'T USE ADJECTIVES IN PLACE OF ADVERBS.'
+I remember a YouTube video where someone said, _'Let me do something real quick.'_ I replied in the comments, _'You cannot do that real quick, but you can do it really quickly._ **DON'T USE ADJECTIVES IN PLACE OF ADVERBS**.'
 
 I got a reply: 'Not the f#\*n grammar police again.'
 
