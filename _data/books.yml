@@ -32,7 +32,7 @@
 
 - title: The Art of Surrender
   slug: the-art-of-surrender
-  status: forthcoming
+  status: published   # was `forthcoming` until release on 15 Oct 2026
   published: 2026-10-15
   # isbn: "978-..."   # add it as soon as Prahran assigns one
   cover: art-of-surrender.jpg
@@ -69,7 +69,7 @@
     what we mistake for love, and what it costs to be truly seen, and still
     misunderstood.
   buy:
-    - name: Pre-order from Prahran Publishing
+    - name: Buy from Prahran Publishing
       url: https://www.prahran.press/authors/blair-purvis/
     # - name: Amazon
     #   url:

@@ -8,7 +8,7 @@ permalink: /
 
 <section class="hero">
   <div>
-    <p class="hero-eyebrow rise rise-1">New novel &middot; {{ lead.published | date: "%-d %B %Y" }}</p>
+    <p class="hero-eyebrow rise rise-1">New novel &middot; Published {{ lead.published | date: "%-d %B %Y" }}</p>
 
     <h1 class="rise rise-2"><span class="t-art">The Art <em>of</em></span><br><span class="t-surr">Surrender</span></h1>
 
@@ -19,7 +19,7 @@ permalink: /
     <div class="hero-actions rise rise-4">
       {% assign links = lead.buy | where_exp: "b", "b.url" %}
       {% if links.size > 0 %}
-      <a class="button" href="{{ links[0].url }}">Pre-order</a>
+      <a class="button" href="{{ links[0].url }}">Buy now</a>
       {% endif %}
       {%- assign lead_url = lead.slug | default: lead.title | slugify | prepend: '/books/' | append: '/' -%}
       <a class="button-ghost" href="{{ lead_url | relative_url }}">Read more</a>
