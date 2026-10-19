@@ -26,6 +26,8 @@ description: >-
 
     {% if book.status == 'forthcoming' %}
     <p class="book-status">Forthcoming &middot; {{ book.published | date: "%-d %B %Y" }}</p>
+    {% elsif book.status == 'published' %}
+    <p class="book-status">Published &middot; {{ book.published | date: "%-d %B %Y" }}</p>
     {% elsif book.role %}
     <p class="book-status">{{ book.role }}{% if book.published %} &middot; {{ book.published | date: "%Y" }}{% endif %}</p>
     {% elsif book.published %}

@@ -24,6 +24,8 @@ layout: default
     {% endcomment %}
     {% if book.status == 'forthcoming' %}
     <p class="book-status">Forthcoming &middot; {{ book.published | date: "%-d %B %Y" }}</p>
+    {% elsif book.status == 'published' %}
+    <p class="book-status">Published &middot; {{ book.published | date: "%-d %B %Y" }}</p>
     {% elsif book.published %}
     <p class="book-status">{{ book.published | date: "%Y" }}</p>
     {% endif %}
