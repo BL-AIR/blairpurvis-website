@@ -3,6 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Cookie consent: must load before Google Tag Manager. Sets every optional
+       category to "denied" until the visitor chooses (see assets/js/consent.js). -->
+  <script src="{{ '/assets/js/consent.js' | relative_url }}"></script>
+  <link rel="stylesheet" href="{{ '/assets/css/consent.css' | relative_url }}">
   {% if jekyll.environment == "production" %}{% include gtm-head.html %}{% endif %}
   <!-- Fonts are served from this site, not from Google — so the only
        third-party request on the page is the Tag Manager one above. -->

@@ -80,11 +80,9 @@ mailing_list_promise: >-
 
 gtm_id: "GTM-PZHJTSW6"    # container also holds matm.com.au and prahran.press; GA4 property G-TMR4P2HDNJ is wired inside GTM, not here
 
-# Consent Mode defaults. With this true, GTM starts with analytics and ad
-# storage DENIED and only measures anonymously until consent is given —
-# the safe posture for readers in the EU and UK. Set to false only if you
-# have added a proper consent banner, or have decided the risk is yours.
-gtm_consent_default_denied: true
+# Consent: since 24 Oct 2026 a cookie banner (assets/js/consent.js) sets
+# every optional category to DENIED for all visitors until they choose.
+# The old gtm_consent_default_denied switch is retired.
 
 # ---------------------------------------------------------------------------
 # SOCIAL LINKS

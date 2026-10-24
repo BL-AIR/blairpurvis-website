@@ -21,7 +21,9 @@ description: Privacy statement for blairpurvis.com.
         provider.
      2. Switching on the contact form. Same.
 
-     Also: if you ever add analytics, this page must change the same day.
+     Also: if you ever add a new tracking tool, this page and the cookie
+     table below must change the same day, and VERSION in
+     assets/js/consent.js must go up by one.
      --------------------------------------------------------------------- -->
 
 {% if site.gtm_id and site.gtm_id != "" %}
@@ -29,34 +31,49 @@ This site is a set of files. It has no accounts, no comments and no advertising.
 The typefaces are served from this site rather than from Google, and there are
 no embedded videos, share buttons or fonts loaded from elsewhere.
 
-It does, however, measure visits.
+It does, however, measure visits — but only if you say so.
 
 ## Analytics
 
-I use Google Tag Manager and, through it, Google Analytics, to understand how
-many people read these pages and which ones they read. This means Google
-receives information about your visit: your IP address, the pages you look at,
-roughly where in the world you are, and what browser you use.
+With your permission, I use Google Tag Manager and, through it, Google
+Analytics, to understand how many people read these pages and which ones they
+read. Google then receives information about your visit: your IP address, the
+pages you look at, roughly where in the world you are, and what browser you use.
 
-I use it to answer questions like *did anyone read that post* and *are people
-finding the book*. I don't use it to identify individuals, and I have no way of
-doing so.
+Also with your permission, I use Microsoft Clarity, which records how pages are
+used — clicks, scrolling, how far down a post people read — so I can see what
+works and what doesn't. Clarity masks anything typed into a form and doesn't
+collect names or contact details.
 
-{% if site.gtm_consent_default_denied %}If you are reading this from the
-European Economic Area, the United Kingdom or Switzerland, nothing is stored on
-your device unless you consent to it — no analytics cookies are set, and what
-measurement happens is anonymous and aggregated. Elsewhere, including Australia,
-Google Analytics sets a cookie to recognise a repeat visit. No advertising
-cookies are set anywhere, and nothing here is used for advertising.{% else %}
-Google Analytics sets cookies in your browser to recognise a repeat visit.{% endif %}
+I use these to answer questions like *did anyone read that post* and *are
+people finding the book*. I don't use them to identify individuals, and I have
+no way of doing so.
 
-If you'd rather not be counted, any of these will prevent it: a browser with
-tracking protection on (Safari and Firefox do this by default), an ad blocker,
-Chrome's Do Not Track setting, or Google's own
-[opt-out browser add-on](https://tools.google.com/dlpage/gaoptout). None of them
-affect your ability to read anything here.
+If you decline, Clarity doesn't run at all, and Google Analytics receives only
+an anonymous signal that a page was viewed — no cookie, and nothing that links
+one visit to the next. Nothing here is used for advertising.
 
-Google's handling of the data is governed by their own privacy policy, not mine.
+Google's and Microsoft's handling of the data is governed by their own privacy
+policies, not mine.
+
+## Cookies {#cookies}
+
+Cookies are small files a website stores in your browser. The first time you
+visit, a small panel asks which kinds you allow, and nothing optional runs
+until you choose. You can change your mind at any time with
+<a href="{{ '/privacy/#cookies' | relative_url }}" data-cookie-settings>Cookie settings</a>,
+at the foot of every page. I ask again after 12 months, or sooner if I add a
+new tool.
+
+| Category | Tool | What it stores | How long |
+| --- | --- | --- | --- |
+| Essential (always on) | This site | Your cookie choice, kept in your browser only | 12 months |
+| Statistics | Google Analytics (`_ga`, `_ga_*`) | A random ID that tells one visit from the next | Up to 2 years |
+| Statistics | Microsoft Clarity (`_clck`, `_clsk`) | A random ID linking the pages of one visit | Up to 1 year |
+| Marketing | None at present | — | — |
+
+You can also block or delete cookies in your browser settings. Everything here
+can be read without optional cookies.
 {% else %}
 This site is a set of files. It has no accounts, no comments, no advertising,
 and no analytics. It sets no cookies and stores nothing in your browser.
